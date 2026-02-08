@@ -3,6 +3,8 @@
 import React from 'react'
 import { useState } from 'react';
 import Link from 'next/link';
+import NavDropdown from './NavDropdown';
+import Image from 'next/image';
 
 export default function Navbar() {
   return (
@@ -13,22 +15,55 @@ export default function Navbar() {
             </Link>
             
             {/* Navigation Links */}
-            <ul className="hidden gap-8 md:flex">
-                <li>
-                    <Link href="" className="hover:underline">Schedule</Link>
-                </li>
+            <ul className="hidden gap-8 md:flex font-bold text-lg">
+                {/* Home Link Item */}
 
-                <li>
-                    <Link href="" className="hover:underline">Scores</Link>
-                </li>
+                {/* Standings Link Item */}
+                <NavDropdown
+                    label="Standings"
+                    items={[
+                        {text: "Competitive", href: "/standings/competitive"},
+                        {text: "Recreational", href: "/standings/recreational"}
 
-                <li>
-                    <Link href="" className="hover:underline">Statistics</Link>
-                </li>
+                    ]}
+                />
+                
+                {/* Schedule Link Item */}
+                <NavDropdown
+                    label="Schedule"
+                    items={[
+                        {text: "Competitive", href: "/schedule/competitive"},
+                        {text: "Recreational", href: "/schedule/recreational"}
 
-                <li>
-                    <Link href="" className="hover:underline">Standings</Link>
-                </li>
+                    ]}
+                />
+
+                {/* Scores Link Item */}
+                <NavDropdown
+                    label="Scores"
+                    items={[
+                        {text: "Competitive", href: "/scores/competitive"},
+                        {text: "Recreational", href: "/scores/recreational"}
+
+                    ]}
+                />
+    
+                {/* Statistics Link Item */}
+                <NavDropdown
+                    label="Statistics"
+                    items={[
+                        {text: "Competitive", href: "/statistics/competitive"},
+                        {text: "Recreational", href: "/scores/recreational"}
+
+                    ]}
+                />
+
+                {/* Resources Link Item */}
+                <NavDropdown
+                    label="Resources"
+                    items={[
+                    ]}
+                />
             </ul>
         </nav>
 
