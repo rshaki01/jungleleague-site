@@ -11,20 +11,20 @@ export default function Navbar() {
 
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-white">
+    <header className="sticky top-0 z-50 border-b bg-white ">
         <nav className="flex mx-auto max-w-7xl items-center px-6 py-2 justify-between">
-            <Link href="/" className="text-lg">
+            <Link href="/" className="text-lg flex flex-col items-center ">
                 <Image
-                    src="/logo/jungle-logo.svg"
+                    src="/logo/jungle-logo-v2.svg"
                     width={72}
                     height={72}
                     alt ="Jungle League Logo"
                     className="
                     rounded-full
-                    transition-transform
                     duration-300
                     ease-out
                     hover:scale-110
+                    shadow-2xl
                     "
                 />
             </Link>
@@ -100,92 +100,106 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile menu */}
-        { open && (
-            <div className="border-t md:hidden">
-                <div className="flex flex-col space-y-2 px-4 py-3">
-                    <span className="font-bold pb-1 border-b">
-                        Schedule
-                    </span>
-                    <div className="flex flex-col space-y-1">
-                        <Link
-                        href="/schedule/competitive"
-                        onClick={() => setOpen(false)}
-                        className="font-medium hover:bg-gray-100  ml-4 rounded-md"
-                        >
-                        Competitive Schedule
-                        </Link>
-                                        <Link
-                        href="/schedule/recreational"
-                        onClick={() => setOpen(false)}
-                        className="font-medium hover:bg-gray-100  ml-4 rounded-md"
-                        >
-                        Recreational Schedule
-                        </Link>
-                    </div>
+        <div
+            className={`
+                md:hidden
+                border-t
+                overflow-hidden
 
-                    <span className="font-bold pb-1 border-b">
+                transition-all
+                duration-300
+                ease-out
+
+                ${open
+                ? "max-h-[500px] opacity-100 translate-y-0"
+                : "max-h-0 opacity-0 -translate-y-1"
+                }
+            `} 
+        >
+            <div className="flex flex-col space-y-2 px-4 py-3">
+                <span className="font-bold pb-1 border-b">
+                    Schedule
+                </span>
+                <div className="flex flex-col space-y-1">
+                    <Link
+                    href="/schedule/competitive"
+                    onClick={() => setOpen(false)}
+                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    >
+                    Competitive Schedule
+                    </Link>
+                    <Link
+                    href="/schedule/recreational"
+                    onClick={() => setOpen(false)}
+                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    >
+                    Recreational Schedule
+                    </Link>
+                </div>
+
+                <span className="font-bold pb-1 border-b">
                         Scores
-                    </span>
-                    <div className="flex flex-col space-y-1">
-                        <Link
-                        href="/scores/competitive"
-                        onClick={() => setOpen(false)}
-                        className="font-medium hover:bg-gray-100  ml-4 rounded-md"
-                        >
-                        Competitive Scores
-                        </Link>
-                                        <Link
-                        href="/scores/recreational"
-                        onClick={() => setOpen(false)}
-                        className="font-medium hover:bg-gray-100  ml-4 rounded-md"
-                        >
-                        Recreational Scores
-                        </Link>
-                    </div>
+                </span>
+                <div className="flex flex-col space-y-1">
+                    <Link
+                    href="/scores/competitive"
+                    onClick={() => setOpen(false)}
+                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    >
+                    Competitive Scores
+                    </Link>
+                    <Link
+                    href="/scores/recreational"
+                    onClick={() => setOpen(false)}
+                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    >
+                    Recreational Scores
+                    </Link>
+                </div>
 
-                    <span className="font-bold pb-1 border-b">
-                        Statistics
-                    </span>
-                    <div className="flex flex-col space-y-1">
-                        <Link
-                        href="/statistics/competitive"
-                        onClick={() => setOpen(false)}
-                        className="font-medium hover:bg-gray-100  ml-4 rounded-md"
-                        >
-                        Competitive Statistcs
-                        </Link>
-                                        <Link
-                        href="/statistics/recreational"
-                        onClick={() => setOpen(false)}
-                        className="font-medium hover:bg-gray-100  ml-4 rounded-md"
-                        >
-                        Recreational Statistics
-                        </Link>
-                    </div>
+                <span className="font-bold pb-1 border-b">
+                     Statistics
+                </span>
+                <div className="flex flex-col space-y-1">
+                    <Link
+                    href="/statistics/competitive"
+                    onClick={() => setOpen(false)}
+                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    >
+                    Competitive Statistcs
+                    </Link>
+                    <Link
+                    href="/statistics/recreational"
+                    onClick={() => setOpen(false)}
+                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    >
+                    Recreational Statistics
+                    </Link>
+                </div>
                     
 
-                    <span className="font-bold pb-1 border-b">
-                        Standings
-                    </span>
-                    <div className="flex flex-col space-y-1">
-                        <Link
-                        href="/standings/competitive"
-                        onClick={() => setOpen(false)}
-                        className="font-medium hover:bg-gray-100  ml-4 rounded-md"
-                        >
-                        Competitive Standings
-                        </Link>
-                                        <Link
-                        href="/standings/recreational"
-                        onClick={() => setOpen(false)}
-                        className="font-medium hover:bg-gray-100  ml-4 rounded-md"
-                        >
-                        Recreational Standings
-                        </Link>
-                    </div>
+                <span className="font-bold pb-1 border-b">
+                    Standings
+                </span>
+                <div className="flex flex-col space-y-1">
+                    <Link
+                    href="/standings/competitive"
+                    onClick={() => setOpen(false)}
+                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    >
+                    Competitive Standings
+                    </Link>
+                    <Link
+                    href="/standings/recreational"
+                    onClick={() => setOpen(false)}
+                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    >
+                    Recreational Standings
+                    </Link>
                 </div>
             </div>
-        )}
+        </div>
+        
     </header>
   )
 }
