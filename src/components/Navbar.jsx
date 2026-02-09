@@ -12,15 +12,16 @@ export default function Navbar() {
 
 
   return (
-    <header className="sticky top-0 z-50 text-white text-yellow-300  ">
-        <nav className="flex mx-auto max-w-7xl items-center px-6 py-2 justify-between bg-gradient-to-r from-black via-zinc-900 to-black backdrop-blur-md border-b border-yellow-400/20  ">
+    <header className="sticky top-0 z-50 text-white text-yellow-300 bg-gradient-to-r from-black via-zinc-900 to-black backdrop-blur-md border-b border-yellow-500/20 ">
+        <nav className="flex mx-auto max-w-7xl items-center px-6 py-2 justify-between ">
             <Link href="/" className="text-lg flex flex-col items-center ">
                 <Image
                     src="/logo/jungle-logo-v2.svg"
-                    width={72}
-                    height={72}
+                    href="/"
+                    width={64}
+                    height={64}
                     alt ="Jungle League Logo"
-                    className="rounded-full duration-300 ease-out hover:scale-110 "
+                    className="rounded-full duration-300 ease-out hover:scale-110  "
                 />
             </Link>
             
@@ -68,12 +69,7 @@ export default function Navbar() {
                     ]}
                 />
 
-                {/* Resources Link Item */}
-                <NavDropdown
-                    label="Resources"
-                    items={[
-                    ]}
-                />
+
             </ul>
 
             {/* Mobile toggle (default is hidden until viewport is < md) */}
