@@ -6,26 +6,21 @@ import Link from 'next/link';
 import NavDropdown from './NavDropdown';
 import Image from 'next/image';
 
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-white ">
-        <nav className="flex mx-auto max-w-7xl items-center px-6 py-2 justify-between">
+    <header className="sticky top-0 z-50 text-white text-yellow-300  ">
+        <nav className="flex mx-auto max-w-7xl items-center px-6 py-2 justify-between bg-gradient-to-r from-black via-zinc-900 to-black backdrop-blur-md border-b border-yellow-400/20  ">
             <Link href="/" className="text-lg flex flex-col items-center ">
                 <Image
                     src="/logo/jungle-logo-v2.svg"
                     width={72}
                     height={72}
                     alt ="Jungle League Logo"
-                    className="
-                    rounded-full
-                    duration-300
-                    ease-out
-                    hover:scale-110
-                    shadow-2xl
-                    "
+                    className="rounded-full duration-300 ease-out hover:scale-110 "
                 />
             </Link>
             
