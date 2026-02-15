@@ -34,13 +34,26 @@ export default function Home() {
             <BoltIcon className="my-3 h-10 w-10 text-yellow-300" />
           </h1>
           {/*Header Caption */}
-          <span class="bg-gradient-to-r from-yellow-400 to-yellow-100 bg-clip-text text-transparent text-xl font-bold">Where intensity meets opportunity.</span>
+          <span className="bg-gradient-to-r from-yellow-400 to-yellow-100 bg-clip-text text-transparent text-xl font-bold">Where intensity meets opportunity.</span>
           {/*Key Dates */}
+
 
         </section>
         
 
         {/*Recreational Experience Cards */}
+        <section className="max-w-2xl bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl p-10 mb-20 flex flex-col items-center justify-center">
+          {/*Card Header */}
+          <h1 className="text-3xl sm:text-5xl font-display font-bold text-white mb-1 flex flex-col justify-center items-center text-center">
+            <span className="">RECREATIONAL LEAGUE</span>
+            <BoltIcon className="my-3 h-10 w-10 text-yellow-300" />
+          </h1>
+          {/*Header Caption */}
+          <span className="bg-gradient-to-r from-yellow-400 to-yellow-100 bg-clip-text text-transparent text-xl font-bold">Where intensity meets opportunity.</span>
+          {/*Key Dates */}
+          
+
+        </section>
         
         
        
