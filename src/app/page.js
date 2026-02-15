@@ -27,10 +27,10 @@ export default function Home() {
 
 
         {/*Competitive Experience Cards */}
-        <section className="max-w-2xl bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl p-10 mb-20 flex flex-col items-center justify-center">
+        <section className="max-w-xl bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl p-10 mb-20 flex flex-col items-center justify-center">
           {/*Card Header */}
           <h1 className="text-3xl sm:text-5xl font-display font-bold text-white mb-1 flex flex-col justify-center items-center">
-            <span className="">COMPETITIVE LEAGUE</span>
+            <span className="text-center">COMPETITIVE LEAGUE</span>
             <BoltIcon className="my-3 h-10 w-10 text-yellow-300" />
           </h1>
           {/*Header Caption */}
@@ -42,16 +42,46 @@ export default function Home() {
         
 
         {/*Recreational Experience Cards */}
-        <section className="max-w-2xl bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl p-10 mb-20 flex flex-col items-center justify-center">
+        <section className="max-w-xl bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl p-10 mb-20 flex flex-col items-center justify-center">
           {/*Card Header */}
           <h1 className="text-3xl sm:text-5xl font-display font-bold text-white mb-1 flex flex-col justify-center items-center text-center">
             <span className="">RECREATIONAL LEAGUE</span>
             <BoltIcon className="my-3 h-10 w-10 text-yellow-300" />
           </h1>
           {/*Header Caption */}
-          <span className="bg-gradient-to-r from-yellow-400 to-yellow-100 bg-clip-text text-transparent text-xl font-bold">Where intensity meets opportunity.</span>
+          <span className="bg-gradient-to-r from-yellow-400 to-yellow-100 bg-clip-text text-transparent text-xl font-bold">Where community and competition meet.</span>
           {/*Key Dates */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           
+          {/* Column 1 */}
+          <div className="space-y-10">
+            <div>
+              <p className="text-xl font-semibold">April 9th</p>
+              <p className="text-lg font-bold">Jungle League Opener</p>
+            </div>
+
+            <div>
+              <p className="text-xl font-semibold">May 7th</p>
+              <p className="text-lg font-bold">All-Star Game</p>
+            </div>
+          </div>
+
+          {/* Column 2 */}
+          <div className="space-y-10">
+            <div>
+              <p className="text-xl font-semibold">April 9th</p>
+              <p className="text-lg font-bold">Jungle League Opener</p>
+            </div>
+
+            <div>
+              <p className="text-xl font-semibold">May 7th</p>
+              <p className="text-lg font-bold">All-Star Game</p>
+            </div>
+          </div>
+
+        </div>
+
+         
 
         </section>
         
