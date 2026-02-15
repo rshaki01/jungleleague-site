@@ -36,6 +36,33 @@ export default function Home() {
           {/*Header Caption */}
           <span className="bg-gradient-to-r from-yellow-400 to-yellow-100 bg-clip-text text-transparent text-xl font-bold">Where intensity meets opportunity.</span>
           {/*Key Dates */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-5">
+            {/* Column 1 */}
+            <div className="space-y-10">
+              <div>
+                <p className="text-xl font-semibold">April 19th</p>
+                <p className="text-lg font-bold">Jungle League Opener</p>
+              </div>
+
+              <div>
+                <p className="text-xl font-semibold">May 24th</p>
+                <p className="text-lg font-bold">All-Star Game</p>
+              </div>
+            </div>
+
+            {/* Column 2 */}
+            <div className="space-y-10">
+              <div>
+                <p className="text-xl font-semibold">July 8th</p>
+                <p className="text-lg font-bold">Playoffs: Race to the thrones</p>
+              </div>
+
+              <div>
+                <p className="text-xl font-semibold">July 19th</p>
+                <p className="text-lg font-bold">Finals: Crowning Day</p>
+              </div>
+            </div>
+        </div>
 
 
         </section>
@@ -51,34 +78,32 @@ export default function Home() {
           {/*Header Caption */}
           <span className="bg-gradient-to-r from-yellow-400 to-yellow-100 bg-clip-text text-transparent text-xl font-bold">Where community and competition meet.</span>
           {/*Key Dates */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          
-          {/* Column 1 */}
-          <div className="space-y-10">
-            <div>
-              <p className="text-xl font-semibold">April 9th</p>
-              <p className="text-lg font-bold">Jungle League Opener</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-5">
+            {/* Column 1 */}
+            <div className="space-y-10">
+              <div>
+                <p className="text-xl font-semibold">April 9th</p>
+                <p className="text-lg font-bold">Jungle League Opener</p>
+              </div>
+
+              <div>
+                <p className="text-xl font-semibold">May 7th</p>
+                <p className="text-lg font-bold">All-Star Game</p>
+              </div>
             </div>
 
-            <div>
-              <p className="text-xl font-semibold">May 7th</p>
-              <p className="text-lg font-bold">All-Star Game</p>
-            </div>
-          </div>
+            {/* Column 2 */}
+            <div className="space-y-10">
+              <div>
+                <p className="text-xl font-semibold">June 4th</p>
+                <p className="text-lg font-bold">Playoffs: Race to the thrones</p>
+              </div>
 
-          {/* Column 2 */}
-          <div className="space-y-10">
-            <div>
-              <p className="text-xl font-semibold">April 9th</p>
-              <p className="text-lg font-bold">Jungle League Opener</p>
+              <div>
+                <p className="text-xl font-semibold">June 18th</p>
+                <p className="text-lg font-bold">Finals: Crowning Day</p>
+              </div>
             </div>
-
-            <div>
-              <p className="text-xl font-semibold">May 7th</p>
-              <p className="text-lg font-bold">All-Star Game</p>
-            </div>
-          </div>
-
         </div>
 
          
