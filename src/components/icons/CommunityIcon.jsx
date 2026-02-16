@@ -1,26 +1,27 @@
-export function CommunityIcon({ className = "h-6 w-6" }) {
+export function CommunityIcon({ className = "h-10 w-10" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
       aria-hidden="true"
     >
-      {/* Outer circle */}
-      <circle cx="12" cy="12" r="10" />
+      {/* Outer globe */}
+      <circle cx="12" cy="12" r="9" />
 
-      {/* Center person */}
-      <path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-      <path d="M7 18a5 5 0 0 1 10 0" />
+      {/* Vertical longitude curves */}
+      <path d="M12 3c3.5 4 3.5 14 0 18" />
+      <path d="M12 3c-3.5 4-3.5 14 0 18" />
 
-      {/* Side people */}
-      <path d="M6 11a2 2 0 1 0 0-4" />
-      <path d="M18 11a2 2 0 1 0 0-4" />
+      {/* Horizontal latitude lines */}
+      <path d="M3 12h18" />
+      <path d="M5 8h14" />
+      <path d="M5 16h14" />
     </svg>
   );
 }

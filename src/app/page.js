@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { BoltIcon } from "@/components/icons/BoltIcon";
+import { CommunityIcon } from "@/components/icons/CommunityIcon";
 
 
 export default function Home() {
@@ -56,7 +57,7 @@ export default function Home() {
             {/*Card Header */}
             <h1 className="text-2xl sm:text-2xl font-display font-bold text-white mb-1 flex flex-col justify-center items-center text-center">
               <span className="text-shadow-lg text-2xl">Recreational League</span>
-              <BoltIcon className="my-5 h-10 w-10 text-yellow-300" />
+              <CommunityIcon className="my-5 h-10 w-10 text-yellow-300" />
               <span className="bg-gradient-to-r from-yellow-400 to-yellow-100 bg-clip-text text-transparent text-lg font-bold text-center opacity-40">Community meets competition.</span>
             </h1>
             {/*Key Dates */}
