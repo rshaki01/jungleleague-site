@@ -1,3 +1,5 @@
+"use client";
+
 export default function StandingsTable() {
   const teams = [
     { name: "East End Eagles", wins: 8, losses: 2, pct: ".800", diff: "+42", streak: "W3" },
@@ -7,11 +9,11 @@ export default function StandingsTable() {
   ];
 
   return (
-    <div className="mx-0 flex justify-center bg-[rgb(200, 154, 154)] p-6 border-4 border border-white">
+    <div className="w-full flex justify-center bg-red-500 p-6 border-4 border-white">
       <table className="w-1/2 border-collapse text-left text-sm md:text-base">
         
         {/* Table Head */}
-        <thead className="border-b border-white/10  uppercase text-xs tracking-wider">
+        <thead className="border-b bg-[rgb(200,154,154)] border-white/10  uppercase text-xs tracking-wider">
           <tr>
             <th className="px-6 py-4">Team</th>
             <th className="px-6 py-4 text-center">Wins</th>
