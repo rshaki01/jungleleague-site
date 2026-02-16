@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 export default function StandingsTable() {
   const teams = [
@@ -9,67 +9,30 @@ export default function StandingsTable() {
   ];
 
   return (
-    <div className="w-full flex justify-center bg-red-500 p-6 border-4 border-white">
-      <table className="w-1/2 border-collapse text-left text-sm md:text-base">
+    <div className="w-1/2 m-auto bg-zinc-800 rounded-2xl shadow-xl ">
+      
         
         {/* Table Head */}
-        <thead className="border-b bg-[rgb(200,154,154)] border-white/10  uppercase text-xs tracking-wider">
-          <tr>
-            <th className="px-6 py-4">Team</th>
-            <th className="px-6 py-4 text-center">Wins</th>
-            <th className="px-6 py-4 text-center">Losses</th>
-            <th className="px-6 py-4 text-center">PCT</th>
-            <th className="px-6 py-4 text-center">Diff</th>
-            <th className="px-6 py-4 text-center">Streak</th>
-          </tr>
-        </thead>
 
+        <div className="hidden sm:grid grid-cols-9 gap-4 p-4 text-xs md:text-sm font-semibold text-gray-300">
+            <div className="col-span-3">Team</div>
+            <div className="col-span-1 text-center">W</div>
+            <div className="col-span-1 text-center">L</div>
+            <div className="col-span-1 text-center">PCT</div>
+            
+            <div className="col-span-1 text-center hidden lg:block">DIFF</div>
+            <div className="col-span-1 text-center">STRK</div>
+            <div className="col-span-1 text-center hidden sm:block">L5</div>
+        </div>
+
+        <div className="border-b border-gray-700 hover:bg-gray-700/30 transition-all duration-200 cursor-pointer transform hover:scale-[1.01] bg-gradient-to-r from-yellow-400/5 to-yellow-600/5">
+            <div className="px-4">text</div>
+        </div>
+
+       
+        
         {/* Table Body */}
-        <tbody>
-          {teams.map((team, index) => (
-            <tr
-              key={team.name}
-              className="border-b border-white/5 hover:bg-white/5 transition-colors"
-            >
-              {/* Team Name */}
-              <td className="px-6 py-4 font-semibold">
-                <span className="bg-gradient-to-r from-yellow-400 to-amber-300 bg-clip-text text-transparent">
-                  {team.name}
-                </span>
-              </td>
-
-              {/* Wins */}
-              <td className="px-6 py-4 text-center font-medium text-green-400">
-                {team.wins}
-              </td>
-
-              {/* Losses */}
-              <td className="px-6 py-4 text-center font-medium text-red-400">
-                {team.losses}
-              </td>
-
-              {/* Percentage */}
-              <td className="px-6 py-4 text-center font-medium text-white">
-                {team.pct}
-              </td>
-
-              {/* Point Differential */}
-              <td
-                className={`px-6 py-4 text-center font-medium ${
-                  team.diff.startsWith("+") ? "text-green-400" : "text-red-400"
-                }`}
-              >
-                {team.diff}
-              </td>
-
-              {/* Streak */}
-              <td className="px-6 py-4 text-center font-semibold text-yellow-400">
-                {team.streak}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+        
     </div>
   );
 }

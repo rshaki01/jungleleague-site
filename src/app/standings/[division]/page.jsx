@@ -5,7 +5,7 @@ export default async function StandingsPage({ params }) {
            
   return (
     
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen max-w-6xl mx-auto text-white">
 
       <p className="">division param: {division}</p>
 
