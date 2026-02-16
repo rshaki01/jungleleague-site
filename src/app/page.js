@@ -25,90 +25,63 @@ export default function Home() {
         </section>
 
 
+        {/*Experience Section */}
+        <section className="grid grid-cols-1 gap-10 px-5 md:grid-cols-2 mb-20">
+          {/*Competitive Experience Cards */}
+          <div className="h-[520px] w-full bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl py-10 px-10  flex flex-col items-center justify-between">
+            {/*Card Header */}
+            <h1 className="text-xl sm:text-2xl font-display font-bold text-white mb-1 flex flex-col justify-center items-center">
+              <span className="text-shadow-lg">Competitive League</span>
+              <BoltIcon className="my-5 h-10 w-10 text-yellow-300" />
+              <span className="bg-gradient-to-r from-yellow-400 to-yellow-100 bg-clip-text text-transparent text-lg font-bold text-center opacity-40">Intensity meets opportunity.</span>
+            </h1>
+            {/*Key Dates */}
+            <div className="flex flex-col gap-2">
+              <span className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent text-lg font-bold text-center opacity-90">April 19th</span>
+              <span className="bg-clip-text text-shadow-sm text-base font-bold text-center opacity-90">Jungle League Opener</span>
 
-        {/*Competitive Experience Cards */}
-        <section className="max-w-xl bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl p-10 mb-20 flex flex-col items-center justify-center">
-          {/*Card Header */}
-          <h1 className="text-3xl sm:text-5xl font-display font-bold text-white mb-1 flex flex-col justify-center items-center">
-            <span className="text-center">COMPETITIVE LEAGUE</span>
-            <BoltIcon className="my-3 h-10 w-10 text-yellow-300" />
-          </h1>
-          {/*Header Caption */}
-          <span className="bg-gradient-to-r from-yellow-400 to-yellow-100 bg-clip-text text-transparent text-xl font-bold">Where intensity meets opportunity.</span>
-          {/*Key Dates */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-5">
-            {/* Column 1 */}
-            <div className="space-y-10">
-              <div>
-                <p className="text-xl font-semibold">April 19th</p>
-                <p className="text-lg font-bold">Jungle League Opener</p>
-              </div>
+              <span className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent text-lg font-bold text-center opacity-90">May 24th</span>
+              <span className="bg-clip-text text-shadow-sm text-base font-bold text-center opacity-90">Jungle All Star Game</span>
 
-              <div>
-                <p className="text-xl font-semibold">May 24th</p>
-                <p className="text-lg font-bold">All-Star Game</p>
-              </div>
+              <span className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent text-lg font-bold text-center opacity-90">July 5th</span>
+              <span className="bg-clip-text text-shadow-sm text-base font-bold text-center opacity-90">Playoffs: Race to the thrones</span>
+
+              <span className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent text-lg font-bold text-center opacity-90">July 19th</span>
+              <span className="bg-clip-text text-shadow-sm text-base font-bold text-center opacity-90">Playoffs: Race to the thrones</span>
+            </div>       
+          </div>
+
+          {/*Recreational Experience Cards */}
+          <div className="h-[520px] w-full bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl py-10 px-10  flex flex-col items-center justify-between">
+            {/*Card Header */}
+            <h1 className="text-2xl sm:text-2xl font-display font-bold text-white mb-1 flex flex-col justify-center items-center text-center">
+              <span className="text-shadow-lg text-2xl">Recreational League</span>
+              <BoltIcon className="my-5 h-10 w-10 text-yellow-300" />
+              <span className="bg-gradient-to-r from-yellow-400 to-yellow-100 bg-clip-text text-transparent text-lg font-bold text-center opacity-40">Community meets competition.</span>
+            </h1>
+            {/*Key Dates */}
+            <div className="flex flex-col gap-2">
+              <span className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent text-lg font-bold text-center opacity-90">April 19th</span>
+              <span className="bg-clip-text text-shadow-sm text-base font-bold text-center opacity-90">Jungle League Opener</span>
+
+              <span className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent text-lg font-bold text-center opacity-90">May 24th</span>
+              <span className="bg-clip-text text-shadow-sm text-base font-bold text-center opacity-90">Jungle All Star Game</span>
+
+              <span className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent text-lg font-bold text-center opacity-90">July 5th</span>
+              <span className="bg-clip-text text-shadow-sm text-base font-bold text-center opacity-90">Playoffs: Race to the thrones</span>
+
+              <span className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent text-lg font-bold text-center opacity-90">July 19th</span>
+              <span className="bg-clip-text text-shadow-sm text-base font-bold text-center opacity-90">Playoffs: Race to the thrones</span>
             </div>
-
-            {/* Column 2 */}
-            <div className="space-y-10">
-              <div>
-                <p className="text-xl font-semibold">July 8th</p>
-                <p className="text-lg font-bold">Playoffs: Race to the thrones</p>
-              </div>
-
-              <div>
-                <p className="text-xl font-semibold">July 19th</p>
-                <p className="text-lg font-bold">Finals: Crowning Day</p>
-              </div>
-            </div>
-        </div>
-
-
+            
+            
+         
+          </div>
         </section>
+  
         
 
-        {/*Recreational Experience Cards */}
-        <section className="max-w-xl bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl p-10 mb-20 flex flex-col items-center justify-center">
-          {/*Card Header */}
-          <h1 className="text-3xl sm:text-5xl font-display font-bold text-white mb-1 flex flex-col justify-center items-center text-center">
-            <span className="">RECREATIONAL LEAGUE</span>
-            <BoltIcon className="my-3 h-10 w-10 text-yellow-300" />
-          </h1>
-          {/*Header Caption */}
-          <span className="bg-gradient-to-r from-yellow-400 to-yellow-100 bg-clip-text text-transparent text-xl font-bold">Where community and competition meet.</span>
-          {/*Key Dates */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-5">
-            {/* Column 1 */}
-            <div className="space-y-10">
-              <div>
-                <p className="text-xl font-semibold">April 9th</p>
-                <p className="text-lg font-bold">Jungle League Opener</p>
-              </div>
-
-              <div>
-                <p className="text-xl font-semibold">May 7th</p>
-                <p className="text-lg font-bold">All-Star Game</p>
-              </div>
-            </div>
-
-            {/* Column 2 */}
-            <div className="space-y-10">
-              <div>
-                <p className="text-xl font-semibold">June 4th</p>
-                <p className="text-lg font-bold">Playoffs: Race to the thrones</p>
-              </div>
-
-              <div>
-                <p className="text-xl font-semibold">June 18th</p>
-                <p className="text-lg font-bold">Finals: Crowning Day</p>
-              </div>
-            </div>
-        </div>
-
-         
-
-        </section>
+        
         
         
        
