@@ -1,15 +1,22 @@
-export default function StandingsPage({ params }) {
-  const { division } = params;
+import StandingsTable from "@/components/ui/StandingsTable";
 
+export default async function StandingsPage({ params }) {
+   const { division } = await params;
+           
   return (
-    <div>
+    
+    <div className="min-h-screen text-white">
+
+      <p className="">division param: {division}</p>
+
       <h1 className="text-4xl font-bold">
         {division === "competitive"
           ? "Competitive Standings"
-          : "Recreational Standings"}
+          : "Yo Standings"}
       </h1>
 
       {/* standings table here */}
+      <StandingsTable />
     </div>
   );
 }

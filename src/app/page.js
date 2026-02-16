@@ -11,7 +11,7 @@ export default function Home() {
   return (
 
     <div className="">
-      <main className="min-h-screen text-white bg-gradient-to-br from-black via-zinc-900 to-black flex flex-col justify-center items-center */">
+      <main className="min-h-screen text-white  flex flex-col justify-center items-center">
         
         {/* Hero Section */}
         <section className="min-h-screen flex items-center flex-col justify-center px-4 max-w-6xl text-center">
