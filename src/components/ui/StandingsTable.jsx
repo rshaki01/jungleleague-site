@@ -14,19 +14,19 @@ export default function StandingsTable() {
         
         {/* Table Head */}
 
-        <div className="hidden sm:grid grid-cols-9 gap-4 p-3 text-xs md:text-sm font-semibold text-gray-300 bg-gradient-to-br from-blue-400/10 to-blue-600/10">
+        <div className="hidden sm:grid grid-cols-8 gap-4 p-3 text-xs md:text-sm font-semibold text-gray-300 bg-gradient-to-br from-blue-400/10 to-blue-600/10 ">
             <div className="col-span-3 ">Team</div>
             <div className="col-span-1 text-center">W</div>
             <div className="col-span-1 text-center">L</div>
             <div className="col-span-1 text-center">PCT</div>
             
             <div className="col-span-1 text-center  lg:block">DIFF</div>
-            <div className="col-span-1 text-center">STRK</div>
-            <div className="col-span-1 text-center hidden sm:block">L5</div>
+            <div className="col-span-1 text-center">STREAK</div>
+            
         </div>
 
         {/* Table Body */}
-        {teams.map((team) => (<div className="grid grid-cols-9 p-3 gap-4 text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
+        {teams.map((team) => (<div className="grid grid-cols-8 p-3 gap-4 text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
             <div className="col-span-3 ">{team.name}</div>
             <div className="col-span-1 text-center">{team.wins}</div>
             <div className="col-span-1 text-center">{team.losses}</div>
@@ -34,7 +34,7 @@ export default function StandingsTable() {
             
             <div className="col-span-1 text-center  lg:block">{team.diff}</div>
             <div className="col-span-1 text-center">{team.streak}</div>
-            <div className="col-span-1 text-center hidden sm:block">L5</div>
+            
         </div>)
         )}
         
