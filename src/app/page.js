@@ -29,7 +29,7 @@ export default function Home() {
         {/*Experience Section */}
         <section className="grid grid-cols-1 gap-10 px-5 md:grid-cols-2 mb-20">
           {/*Competitive Experience Cards */}
-          <div className="h-[520px] w-full bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl py-10 px-10  flex flex-col items-center justify-between">
+          <div className="h-[520px] w-full bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl py-10 px-10  flex flex-col items-center justify-between hover:from-yellow-300 hover:to-yellow-500 transition-all duration-300 transform ">
             {/*Card Header */}
             <h1 className="text-xl sm:text-2xl font-display font-bold text-white mb-1 flex flex-col justify-center items-center">
               <span className="text-shadow-lg">Competitive League</span>
@@ -53,7 +53,7 @@ export default function Home() {
           </div>
 
           {/*Recreational Experience Cards */}
-          <div className="h-[520px] w-full bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl py-10 px-10  flex flex-col items-center justify-between">
+          <div className="h-[520px] w-full bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl py-10 px-10  flex flex-col items-center justify-between hover:from-yellow-300 hover:to-yellow-500 transition-all duration-300 transform">
             {/*Card Header */}
             <h1 className="text-2xl sm:text-2xl font-display font-bold text-white mb-1 flex flex-col justify-center items-center text-center">
               <span className="text-shadow-lg text-2xl">Recreational League</span>

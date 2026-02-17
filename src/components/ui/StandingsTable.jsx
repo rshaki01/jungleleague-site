@@ -9,33 +9,35 @@ export default function StandingsTable() {
   ];
 
   return (
-    <div className="w-1/2 m-auto bg-zinc-800 rounded-xl overflow-hidden">
+    <div className="w-full m-auto mt-5 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden">
       
         
         {/* Table Head */}
 
-        <div className="hidden sm:grid grid-cols-9 gap-4 p-4 text-xs md:text-sm font-semibold text-gray-300">
-            <div className="col-span-3">Team</div>
+        <div className="hidden sm:grid grid-cols-9 gap-4 p-3 text-xs md:text-sm font-semibold text-gray-300 bg-gradient-to-br from-blue-400/10 to-blue-600/10">
+            <div className="col-span-3 ">Team</div>
             <div className="col-span-1 text-center">W</div>
             <div className="col-span-1 text-center">L</div>
             <div className="col-span-1 text-center">PCT</div>
             
-            <div className="col-span-1 text-center hidden lg:block">DIFF</div>
+            <div className="col-span-1 text-center  lg:block">DIFF</div>
             <div className="col-span-1 text-center">STRK</div>
             <div className="col-span-1 text-center hidden sm:block">L5</div>
         </div>
 
-        <div className="  hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
-            <div className="px-4">text</div>
-        </div>
-
-        <div className="  hover:bg-gray-700/30 transition-all duration-200 cursor-pointer ">
-            <div className="px-4">text</div>
-        </div>
-
-       
-        
         {/* Table Body */}
+        {teams.map((team) => (<div className="grid grid-cols-9 p-3 gap-4 text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
+            <div className="col-span-3 ">{team.name}</div>
+            <div className="col-span-1 text-center">{team.wins}</div>
+            <div className="col-span-1 text-center">{team.losses}</div>
+            <div className="col-span-1 text-center">{team.pct}</div>
+            
+            <div className="col-span-1 text-center  lg:block">{team.diff}</div>
+            <div className="col-span-1 text-center">{team.streak}</div>
+            <div className="col-span-1 text-center hidden sm:block">L5</div>
+        </div>)
+        )}
+        
         
     </div>
   );
