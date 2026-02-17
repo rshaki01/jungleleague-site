@@ -9,7 +9,7 @@ export default function StandingsTable() {
   ];
 
   return (
-    <div className="w-1/2 m-auto bg-zinc-800 rounded-2xl shadow-xl ">
+    <div className="w-1/2 m-auto bg-zinc-800 rounded-xl overflow-hidden">
       
         
         {/* Table Head */}
@@ -25,7 +25,11 @@ export default function StandingsTable() {
             <div className="col-span-1 text-center hidden sm:block">L5</div>
         </div>
 
-        <div className="border-b border-gray-700 hover:bg-gray-700/30 transition-all duration-200 cursor-pointer transform hover:scale-[1.01] bg-gradient-to-r from-yellow-400/5 to-yellow-600/5">
+        <div className="  hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
+            <div className="px-4">text</div>
+        </div>
+
+        <div className="  hover:bg-gray-700/30 transition-all duration-200 cursor-pointer ">
             <div className="px-4">text</div>
         </div>
 
