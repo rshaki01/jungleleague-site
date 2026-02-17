@@ -33,12 +33,11 @@ export default function StandingsTable() {
         </div>
 
         {/* Table Body */}
-        {teams.map((team) => (<div className="grid grid-cols-8 p-3 gap-4 border-b border-gray-500/30 text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
-            <div className="col-span-3 ">{team.name}</div>
+        {teams.map((team, index) => (<div className="grid grid-cols-8 p-3 gap-4 border-b border-gray-500/30 text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
+            <div className="col-span-3 ">{`#${index+1} ${team.name}`}</div>
             <div className="col-span-1 text-center text-green-400">{team.wins}</div>
             <div className="col-span-1 text-center text-red-400">{team.losses}</div>
             <div className="col-span-1 text-center">{team.pct}</div>
-            
             <div className="col-span-1 text-center  lg:block">{team.diff}</div>
             <div className="col-span-1 text-center text-gray-400">{team.streak}</div>
             
