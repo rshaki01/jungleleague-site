@@ -16,7 +16,7 @@ export default function StandingsTable() {
   ];
 
   return (
-    <div className="w-full m-auto mt-5 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden">
+    <div className="w-full m-auto mt-5 bg-gradient-to-br from-gray-800/50 to-gray-900/30 rounded-xl overflow-hidden">
       
         
         {/* Table Head */}
@@ -35,12 +35,12 @@ export default function StandingsTable() {
         {/* Table Body */}
         {teams.map((team) => (<div className="grid grid-cols-8 p-3 gap-4 border-b border-gray-500/30 text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
             <div className="col-span-3 ">{team.name}</div>
-            <div className="col-span-1 text-center">{team.wins}</div>
-            <div className="col-span-1 text-center">{team.losses}</div>
+            <div className="col-span-1 text-center text-green-400">{team.wins}</div>
+            <div className="col-span-1 text-center text-red-400">{team.losses}</div>
             <div className="col-span-1 text-center">{team.pct}</div>
             
             <div className="col-span-1 text-center  lg:block">{team.diff}</div>
-            <div className="col-span-1 text-center">{team.streak}</div>
+            <div className="col-span-1 text-center text-gray-400">{team.streak}</div>
             
         </div>)
         )}
