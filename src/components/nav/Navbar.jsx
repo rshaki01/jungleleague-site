@@ -26,7 +26,7 @@ export default function Navbar() {
             </Link>
             
             {/* Navigation Links */}
-            <ul className="hidden gap-8 md:flex font-bold text-lg">
+            <ul className="hidden gap-8 md:flex font-bold text-lg ">
                 {/* Home Link Item */}
 
                 {/* Standings Link Item */}
@@ -96,6 +96,7 @@ export default function Navbar() {
                 md:hidden
                 border-t
                 overflow-hidden
+                
 
                 transition-all
                 duration-300
@@ -111,18 +112,18 @@ export default function Navbar() {
                 <span className="font-bold pb-1 border-b">
                     Schedule
                 </span>
-                <div className="flex flex-col space-y-1">
+                <div className="flex flex-col space-y-1 text-gray-100">
                     <Link
                     href="/schedule/competitive"
                     onClick={() => setOpen(false)}
-                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
                     >
                     Competitive Schedule
                     </Link>
                     <Link
                     href="/schedule/recreational"
                     onClick={() => setOpen(false)}
-                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
                     >
                     Recreational Schedule
                     </Link>
@@ -131,18 +132,18 @@ export default function Navbar() {
                 <span className="font-bold pb-1 border-b">
                         Scores
                 </span>
-                <div className="flex flex-col space-y-1">
+                <div className="flex flex-col space-y-1 text-gray-100">
                     <Link
                     href="/scores/competitive"
                     onClick={() => setOpen(false)}
-                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
                     >
                     Competitive Scores
                     </Link>
                     <Link
                     href="/scores/recreational"
                     onClick={() => setOpen(false)}
-                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
                     >
                     Recreational Scores
                     </Link>
@@ -151,18 +152,18 @@ export default function Navbar() {
                 <span className="font-bold pb-1 border-b">
                      Statistics
                 </span>
-                <div className="flex flex-col space-y-1">
+                <div className="flex flex-col space-y-1 text-gray-100">
                     <Link
                     href="/statistics/competitive"
                     onClick={() => setOpen(false)}
-                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
                     >
                     Competitive Statistcs
                     </Link>
                     <Link
                     href="/statistics/recreational"
                     onClick={() => setOpen(false)}
-                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
                     >
                     Recreational Statistics
                     </Link>
@@ -172,18 +173,18 @@ export default function Navbar() {
                 <span className="font-bold pb-1 border-b">
                     Standings
                 </span>
-                <div className="flex flex-col space-y-1">
+                <div className="flex flex-col space-y-1 text-gray-100">
                     <Link
                     href="/standings/competitive"
                     onClick={() => setOpen(false)}
-                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
                     >
                     Competitive Standings
                     </Link>
                     <Link
                     href="/standings/recreational"
                     onClick={() => setOpen(false)}
-                    className="font-medium hover:bg-gray-100  ml-4 rounded-md"
+                    className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
                     >
                     Recreational Standings
                     </Link>
