@@ -7,8 +7,8 @@ export default function TeamModal({open, onClose}) {
 
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-500 flex items-center justify-center">
-          <div className="w-1/2 bg-slate-900 p-8 rounded-xl">
+        <div className="fixed inset-0 bg-black/80 transition-opacity duration-500 flex items-center justify-center" onClick={onClose}>
+          <div className="w-1/2 bg-slate-900 p-8 rounded-xl" onClick={(e) => e.stopPropagation()}>
             <div className="flex justify-between">
               <h1 className="text-slate-50 text-xl pb-4">Create new expense</h1>
               <button className="text-slate-50 cursor-pointer" onClick={onClose}>x</button>

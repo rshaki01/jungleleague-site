@@ -23,7 +23,7 @@ export default function StandingsTable() {
   return (
     <div className="w-full m-auto mt-5 bg-gradient-to-br from-gray-800/50 to-gray-900/30 rounded-xl overflow-hidden">
       
-        <TeamModal open={showModal} />
+        <TeamModal open={showModal} onClose={() => setShowModal(false)}/>
         
         {/* Table Head */}
 
@@ -39,7 +39,7 @@ export default function StandingsTable() {
         </div>
 
         {/* Table Body - dynamically display each row*/}
-        {teams.map((team, index) => (<div key={index} onClick={setShowModal(true)} className="grid grid-cols-8 p-3 gap-4 border-b border-gray-500/30 text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
+        {teams.map((team, index) => (<div key={index} onClick={() => setShowModal(true)} className="grid grid-cols-8 p-3 gap-4 border-b border-gray-500/30 text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
             
             <div className="col-span-3 ">{`#${index+1} ${team.name}`}</div>
             <div className="col-span-1 text-center text-green-400">{team.wins}</div>
@@ -50,9 +50,7 @@ export default function StandingsTable() {
             
         </div>)
         )}
-        {console.log(showModal)}
-        
-        
+            
         
     </div>
   );
