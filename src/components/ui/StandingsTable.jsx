@@ -6,6 +6,7 @@ import TeamModal from "./TeamModal";
 export default function StandingsTable() {
 
   const [showModal, setShowModal] = useState(false);
+  const [teamID, setTeamID] = useState('')
 
   const teams = [
     { name: "East End Eagles", wins: 8, losses: 2, pct: ".800", diff: "+42", streak: "W3" },
@@ -23,7 +24,7 @@ export default function StandingsTable() {
   return (
     <div className="w-full m-auto mt-5 bg-gradient-to-br from-gray-800/50 to-gray-900/30 rounded-xl overflow-hidden">
       
-        <TeamModal open={showModal} onClose={() => setShowModal(false)}/>
+        <TeamModal open={showModal} onClose={() => setShowModal(false)} teamID={teamID}/>
         
         {/* Table Head */}
 

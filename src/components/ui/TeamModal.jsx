@@ -1,14 +1,14 @@
 "use client"
 import {useState} from 'react';
 
-export default function TeamModal({open, onClose}) {
+export default function TeamModal({open, onClose, team}) {
 
      if (!open) return null
 
 
     return (
-        <div className="fixed inset-0 bg-black/80 transition-opacity duration-500 flex items-center justify-center" onClick={onClose}>
-          <div className="w-1/2 bg-slate-900 p-8 rounded-xl" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 flex items-center justify-center" onClick={onClose}>
+          <div className="max-w-6xl w-full max-h-[90vh] overflow-y-auto bg-slate-900 m-8 p-8 rounded-xl" onClick={(e) => e.stopPropagation()}>
             <div className="flex justify-between">
               <h1 className="text-slate-50 text-xl pb-4">Create new expense</h1>
               <button className="text-slate-50 cursor-pointer" onClick={onClose}>x</button>
