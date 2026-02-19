@@ -20,7 +20,7 @@ export default async function StandingsPage({ params }) {
       <p className="my-3 text-xs sm:text-sm text-gray-300 max-w-3xl mx-auto text-center">View the current leaders and team standings. For player information, select any team.</p>
 
       {/* standings table here */}
-      <StandingsTable />
+      <StandingsTable division={division}/>
     </div>
   );
 }
