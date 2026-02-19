@@ -1,7 +1,8 @@
 "use client"
 import {useState} from 'react';
+import { mockStandings } from '@/lib/data/mockStandings';
 
-export default function TeamModal({open, onClose, team}) {
+export default function TeamModal({open, onClose, teamID}) {
 
      if (!open) return null
 

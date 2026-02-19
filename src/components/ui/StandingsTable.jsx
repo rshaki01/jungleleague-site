@@ -21,8 +21,7 @@ export default function StandingsTable({division}) {
             <div className="col-span-3 ">Team</div>
             <div className="col-span-1 text-center">W</div>
             <div className="col-span-1 text-center">L</div>
-            <div className="col-span-1 text-center">PCT</div>
-            
+            <div className="col-span-1 text-center">PCT</div>        
             <div className="col-span-1 text-center  lg:block">DIFF</div>
             <div className="col-span-1 text-center">STREAK</div>
             
