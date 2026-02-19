@@ -95,8 +95,7 @@ export default function Navbar() {
             className={`
                 md:hidden
                 border-t
-                overflow-hidden
-                
+                overflow-hidden        
 
                 transition-all
                 duration-300
