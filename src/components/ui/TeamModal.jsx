@@ -11,6 +11,8 @@ export default function TeamModal({open, onClose, teamID}) {
      const players = getPlayersByTeamId(teamID);
      const team = getTeamById(teamID);
 
+     // bg-gradient-to-br from-blue-400/10 to-blue-600/10 border border-blue-400/20
+
     return (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 flex items-center justify-center" onClick={onClose}>
           <div className="max-w-6xl w-full max-h-[90vh] overflow-y-auto bg-slate-900 m-8 p-8 rounded-xl" onClick={(e) => e.stopPropagation()}>

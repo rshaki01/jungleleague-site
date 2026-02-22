@@ -73,9 +73,6 @@ export default function Home() {
               <span className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent text-md font-bold text-center opacity-90">July 19th</span>
               <span className="bg-clip-text text-shadow-sm text-base font-bold text-center opacity-90 text-sm text-sm">Playoffs: Race to the thrones</span>
             </div>
-            
-            
-         
           </div>
         </section>
   

@@ -108,7 +108,7 @@ export default function Navbar() {
             `} 
         >
             <div className="flex flex-col space-y-2 px-4 py-3">
-                <span className="font-bold pb-1 border-b">
+                <span className="font-bold pb-1 border-b border-zinc-100/20">
                     Schedule
                 </span>
                 <div className="flex flex-col space-y-1 text-gray-100">
@@ -128,7 +128,7 @@ export default function Navbar() {
                     </Link>
                 </div>
 
-                <span className="font-bold pb-1 border-b">
+                <span className="font-bold pb-1 border-b border-zinc-100/20 border-zinc-100/20">
                         Scores
                 </span>
                 <div className="flex flex-col space-y-1 text-gray-100">
@@ -148,7 +148,7 @@ export default function Navbar() {
                     </Link>
                 </div>
 
-                <span className="font-bold pb-1 border-b">
+                <span className="font-bold pb-1 border-b border-zinc-100/20">
                      Statistics
                 </span>
                 <div className="flex flex-col space-y-1 text-gray-100">
@@ -169,7 +169,7 @@ export default function Navbar() {
                 </div>
                     
 
-                <span className="font-bold pb-1 border-b">
+                <span className="font-bold pb-1 border-b border-zinc-100/20">
                     Standings
                 </span>
                 <div className="flex flex-col space-y-1 text-gray-100">
