@@ -1,4 +1,4 @@
-import ScheduleFilter from "@/components/ui/ScheduleFilter";
+import ScheduleFilter from "@/components/ui/schedule/ScheduleFilter";
 
 
 export default async function SchedulePage({ params }) {

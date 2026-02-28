@@ -30,8 +30,9 @@ export default function ScheduleFilter({division}) {
           </div>
           <div className="mt-3 flex flex-col gap-2">
             <label className="font-semibold  text-shadow-sm text-black">TEAM</label>
-            <select class="w-full px-4 py-2 bg-gray-200/80 border border-orange-200/50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-yellow-400">
-                {teams.map((team) => <option key={team.id}>{team.name}</option>)}
+            <select className="w-full px-4 py-2 bg-gray-200/80 border border-orange-200/50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                <option value="1">All teams</option>
+                {teams.map((team, index) => <option value={index+2} key={team.id}>{team.name}</option>)}
             </select>
           </div>
         </div>
