@@ -1,6 +1,7 @@
 // src/lib/data/helpers.js
 import { mockStandings } from "./mockStandings";
 import { mockPlayerAggregates } from "./mockPlayerAggregates";
+import { mockGames } from "./mockGames";
 
 // --- Teams ---
 export function getTeams() {
@@ -40,4 +41,10 @@ export function sortTeamsByWinsThenDiff(teams) {
 
 export function sortPlayersByPPG(players) {
   return [...players].sort((a, b) => (b.ppg ?? 0) - (a.ppg ?? 0));
+}
+
+// --- Games ---
+
+export function getGamesByWeek(week) {
+  return mockGames.filter((g) => g.week = week)
 }
