@@ -27,12 +27,12 @@ export default function NavDropdown({ label, items}) {
             </div>
 
             {/* Dropdown */}
-            <div className="absolute left-0 top-full mt-0 min-w-[110px] rounded-md border bg-white shadow-lg py-2 bg-gradient-to-br from-black via-zinc-900 to-zinc-800 opacity-0 translate-y-1 pointer-events-none transition-all duration-300 ease-out group-hover:opacity-500 group-hover:translate-y-0 group-hover:pointer-events-auto">
+            <div className="absolute left-0 top-full mt-0 min-w-[110px] rounded-md border border-gray-100/50 shadow-lg py-2 bg-gradient-to-br from-black via-zinc-900 to-zinc-800 opacity-0 translate-y-1 pointer-events-none transition-all duration-300 ease-out group-hover:opacity-500 group-hover:translate-y-0 group-hover:pointer-events-auto">
                 {items.map((item) => (
                     <Link
                         key={item.href}
                         href={item.href}
-                        className="block px-4 py-2 text-sm hover:bg-gray-100"
+                        className="block px-4 py-2 text-sm hover:bg-gray-100/10"
                     >
                         {item.text}
                     </Link>
