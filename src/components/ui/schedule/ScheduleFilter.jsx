@@ -6,6 +6,8 @@ import { getTeamsByDivision } from '@/lib/data/helpers';
 export default function ScheduleFilter({division, week, team, setWeek, setTeam}) {
 
     const teams = getTeamsByDivision(division);
+    // Calculate weeks to display based on division selected
+    const weeksInSeason = division === "recreational" ? 8 : 10;
 
     return (
         <div className="mt-5 m-auto w-full bg-gradient-to-b from-yellow-300/80 to-yellow-500/80 rounded-xl p-5" >
@@ -20,16 +22,12 @@ export default function ScheduleFilter({division, week, team, setWeek, setTeam})
             value={week}
             onChange={(e) => setWeek(e.target.value)} 
             className="w-full px-4 py-2 bg-gray-200/80 border border-orange-200/50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-yellow-400">
-                <option value="1">Week 1</option>
-                <option value="2">Week 2</option>
-                <option value="3">Week 3</option>
-                <option value="4">Week 4</option>
-                <option value="5">Week 5</option>
-                <option value="6">Week 6</option>
-                <option value="7">Week 7</option>
-                <option value="8">Week 8</option>
-                <option value="9">Week 9</option>
-                <option value="10">Week 10</option></select>
+                {Array.from({ length: weeksInSeason }, (_, i) => (
+                  <option key={i + 1} value={i + 1}>
+                    Week {i + 1}
+                  </option>
+                ))}
+              </select>
           </div>
           <div className="mt-3 flex flex-col gap-2">
             <label className="font-semibold  text-shadow-sm text-black">TEAM</label>
