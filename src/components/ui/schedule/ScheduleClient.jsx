@@ -6,6 +6,8 @@ import { getTeamById, getPlayersByTeamId } from '@/lib/data/helpers';
 
 export default function ScheduleClient({division}) {
 
+    const [selectedWeek, setSelectedWeek] = useState('1');
+    const [selectedTeam, setSelectedTeam] = useState('All');
 
     //  const players = getPlayersByTeamId(teamID);
     //  const team = getTeamById(teamID);
@@ -14,7 +16,14 @@ export default function ScheduleClient({division}) {
 
     return (
         <div className="">
-          <ScheduleFilter division={division}/>
+            <ScheduleFilter
+                division={division}
+                week={selectedWeek}
+                team={selectedTeam}
+                setWeek={setSelectedWeek}
+                setTeam={setSelectedTeam}
+            />
+            <p>{selectedWeek} | {selectedTeam}</p>
         </div>
       )
 

@@ -3,7 +3,7 @@ import {useState} from 'react';
 import { mockStandings } from '@/lib/data/mockStandings';
 import { getTeamsByDivision } from '@/lib/data/helpers';
 
-export default function ScheduleFilter({division}) {
+export default function ScheduleFilter({division, week, team, setWeek, setTeam}) {
 
     const teams = getTeamsByDivision(division);
 
@@ -16,7 +16,10 @@ export default function ScheduleFilter({division}) {
           {/*Dropbox input for filters */}
           <div className="mt-3 flex flex-col gap-2">
             <label className="font-semibold text-shadow-sm text-black">WEEK</label>
-            <select className="w-full px-4 py-2 bg-gray-200/80 border border-orange-200/50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            <select
+            value={week}
+            onChange={(e) => setWeek(e.target.value)} 
+            className="w-full px-4 py-2 bg-gray-200/80 border border-orange-200/50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-yellow-400">
                 <option value="1">Week 1</option>
                 <option value="2">Week 2</option>
                 <option value="3">Week 3</option>
@@ -30,9 +33,12 @@ export default function ScheduleFilter({division}) {
           </div>
           <div className="mt-3 flex flex-col gap-2">
             <label className="font-semibold  text-shadow-sm text-black">TEAM</label>
-            <select className="w-full px-4 py-2 bg-gray-200/80 border border-orange-200/50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-yellow-400">
-                <option value="1">All teams</option>
-                {teams.map((team, index) => <option value={index+2} key={team.id}>{team.name}</option>)}
+            <select
+            value={team}
+            onChange={(e) => setTeam(e.target.value)} 
+            className="w-full px-4 py-2 bg-gray-200/80 border border-orange-200/50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                <option value="All">All teams</option>
+                {teams.map((team) => <option value={team.id} key={team.id}>{team.name}</option>)}
             </select>
           </div>
         </div>
