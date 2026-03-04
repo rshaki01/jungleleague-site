@@ -20,7 +20,7 @@ export default function ScheduleFilter({division, week, team, setWeek, setTeam})
             <label className="font-semibold text-shadow-sm text-black">WEEK</label>
             <select
             value={week}
-            onChange={(e) => setWeek(e.target.value)} 
+            onChange={(e) => setWeek(Number(e.target.value))} 
             className="w-full px-4 py-2 bg-gray-200/80 border border-orange-200/50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-yellow-400">
                 {Array.from({ length: weeksInSeason }, (_, i) => (
                   <option key={i + 1} value={i + 1}>

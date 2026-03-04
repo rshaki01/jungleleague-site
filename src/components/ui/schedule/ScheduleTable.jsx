@@ -1,11 +1,13 @@
 "use client"
 
 import { useState } from "react";
+import { getTeamById, getTeamsByDivision, getPlayersByTeamId, getGamesByWeekAndTeam } from "@/lib/data/helpers";
 
-export default function ScheduleTable({division, week, team}) {
+export default function ScheduleTable({division, week, teamId}) {
 
 
-  const teams = mockStandings.filter((team) => team.division === division);
+  const games = getGamesByWeekAndTeam(week, teamId);
+  console.log(games);
 
   return (
     <div className="w-full m-auto mt-5 bg-gradient-to-br from-gray-800/50 to-gray-900/30 rounded-xl overflow-hidden">
@@ -22,13 +24,13 @@ export default function ScheduleTable({division, week, team}) {
         </div>
 
         {/* Table Body - dynamically display each row*/}
-        {teams.map((team, index) => (<div key={team.id} onClick={() => { setShowModal(true); setTeamID(team.id)}} className="grid grid-cols-8 p-3 gap-4 border-b border-gray-500/30 text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
-            <div className="col-span-3 ">{`#${index+1} ${team.name}`}</div>
-            <div className="col-span-1 text-center text-green-400">{team.wins}</div>
-            <div className="col-span-1 text-center text-red-400">{team.losses}</div>
-            <div className="col-span-1 text-center">{team.pct}</div>
-            <div className="col-span-1 text-center  lg:block">{team.diff}</div>
-            <div className="col-span-1 text-center text-gray-400">{team.streak}</div>
+        {games.map((game) => (<div key={game.id}  className="grid grid-cols-8 p-3 gap-4 border-b border-gray-500/30 text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
+            <div className="col-span-3 ">{game.id}</div>
+            <div className="col-span-1 text-center text-green-400">{game.id}</div>
+            <div className="col-span-1 text-center text-red-400">{game.id}</div>
+            <div className="col-span-1 text-center">{game.id}</div>
+            <div className="col-span-1 text-center  lg:block">{game.id}</div>
+            <div className="col-span-1 text-center text-gray-400">{game.id}</div>
         </div>)
         )}        
     </div>

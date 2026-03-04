@@ -1,13 +1,14 @@
 "use client"
 import {useState} from 'react';
 import ScheduleFilter from './ScheduleFilter';
+import ScheduleTable from './ScheduleTable';
 
 import { getTeamById, getPlayersByTeamId } from '@/lib/data/helpers';
 
 export default function ScheduleClient({division}) {
 
-    const [selectedWeek, setSelectedWeek] = useState('1');
-    const [selectedTeam, setSelectedTeam] = useState('All');
+    const [selectedWeek, setSelectedWeek] = useState(1);
+    const [selectedTeamId, setSelectedTeamId] = useState('east-end-eagles');
 
     //  const players = getPlayersByTeamId(teamID);
     //  const team = getTeamById(teamID);
@@ -19,11 +20,13 @@ export default function ScheduleClient({division}) {
             <ScheduleFilter
                 division={division}
                 week={selectedWeek}
-                team={selectedTeam}
+                team={selectedTeamId}
                 setWeek={setSelectedWeek}
-                setTeam={setSelectedTeam}
+                setTeam={setSelectedTeamId}
             />
-            <p>{selectedWeek} | {selectedTeam}</p>
+            <p>{selectedWeek} | {selectedTeamId}</p>
+
+            <ScheduleTable division={division} week={selectedWeek} teamId={selectedTeamId} />
         </div>
       )
 
