@@ -1,4 +1,5 @@
 import ScheduleFilter from "@/components/ui/schedule/ScheduleFilter";
+import ScheduleClient from "@/components/ui/schedule/ScheduleClient";
 
 
 export default async function SchedulePage({ params }) {
@@ -13,7 +14,7 @@ export default async function SchedulePage({ params }) {
           : "Recreational Schedule"}
       </h1>
       <p className="my-3 text-xs sm:text-sm text-gray-300 max-w-3xl mx-auto text-center">Stay updated with every upcoming match. Filter by team or week.</p>
-      <ScheduleFilter division={division}/>
+      <ScheduleClient division={division} />
     </div>
   );
 }
