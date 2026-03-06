@@ -7,6 +7,9 @@ export default function ScheduleTable({division, week, teamId}) {
 
 
   const games = getGamesByWeekAndTeam(week, teamId);
+  console.log(games);
+  const homeTeam = getTeamById(games.homeTeamId);
+  const awayTeam = getTeamById(games.awayTeamId)
 
   return (
     <div className="w-full m-auto mt-5 bg-gradient-to-br from-gray-800/50 to-gray-900/30 rounded-xl overflow-hidden">
@@ -15,15 +18,19 @@ export default function ScheduleTable({division, week, teamId}) {
  
 
         {/* Table Body - dynamically display each row*/}
-        {games.map((game) => (<div key={game.id}  className="flex gap-3 border-b border-gray-500/30 text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
-            <div className="">{game.id}</div>
-            <div className="">{game.homeTeamId}</div>
-            <div className="">{game.awayTeamId}</div>
-            <div className="">{game.week}</div>
-            <div className="">{game.date}</div>
-            <div className="">{game.time}</div>
-
-          
+        {games.map((game) => (<div key={game.id}  className="flex flex-col gap-3 p-5 text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200 cursor-pointer">
+            <div className="flex gap-3 border-b border-gray-100/30 mx-auto">
+              <div className="text-xl pb-2">{getTeamById(game.homeTeamId).name}</div>
+              <div className="text-xl bg-gradient-to-br from-yellow-400 to-yellow-300 bg-clip-text text-transparent">vs</div>
+              <div className="text-xl">{getTeamById(game.awayTeamId).name}</div>
+            </div>
+            
+            <div className="flex gap-3 mx-auto text-gray-400/80">
+              <div className="">Week: {game.week}</div>
+              <div className="">Date: {game.date}</div>
+              <div className="">Time: {game.time}</div>
+            </div>
+            
         </div>)
         )}        
     </div>

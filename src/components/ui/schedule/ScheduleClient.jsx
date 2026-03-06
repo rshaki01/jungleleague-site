@@ -24,7 +24,6 @@ export default function ScheduleClient({division}) {
                 setWeek={setSelectedWeek}
                 setTeam={setSelectedTeamId}
             />
-            <p>{selectedWeek} | {selectedTeamId}</p>
 
             <ScheduleTable division={division} week={selectedWeek} teamId={selectedTeamId} />
         </div>
