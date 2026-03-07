@@ -8,7 +8,7 @@ import { getTeamById, getPlayersByTeamId } from '@/lib/data/helpers';
 export default function ScheduleClient({division}) {
 
     const [selectedWeek, setSelectedWeek] = useState(1);
-    const [selectedTeamId, setSelectedTeamId] = useState('east-end-eagles');
+    const [selectedTeamId, setSelectedTeamId] = useState("All");
 
     //  const players = getPlayersByTeamId(teamID);
     //  const team = getTeamById(teamID);

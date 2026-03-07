@@ -45,8 +45,22 @@ export function sortPlayersByPPG(players) {
 
 // --- Games ---
 
+export function getGames(division, week, teamId) {
+  return mockGames.filter((g) => {
+    const matchesDivision = g.division === division;
+    const matchesWeek = g.week === Number(week);
+    const matchesTeam =
+      teamId === "All" ||
+      g.homeTeamId === teamId ||
+      g.awayTeamId === teamId;
+
+    return matchesDivision && matchesWeek && matchesTeam;
+  });
+}
+
+
 export function getGamesByWeek(week) {
-  return mockGames.filter((g) => g.week = week)
+  return mockGames.filter((g) => g.week === week)
 }
 
 export function getGamesByWeekAndTeam(week, teamId) {
