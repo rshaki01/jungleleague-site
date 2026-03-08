@@ -26,7 +26,7 @@ export default function Navbar() {
             </Link>
             
             {/* Navigation Links */}
-            <ul className="hidden gap-8 md:flex font-bold text-lg ">
+            <ul className="hidden gap-8 md:flex font-bold text-lg">
                 {/* Home Link Item */}
 
                 {/* Standings Link Item */}

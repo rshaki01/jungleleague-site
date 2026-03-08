@@ -58,7 +58,6 @@ export function getGames(division, week, teamId) {
   });
 }
 
-
 export function getGamesByWeek(week) {
   return mockGames.filter((g) => g.week === week)
 }
@@ -66,3 +65,7 @@ export function getGamesByWeek(week) {
 export function getGamesByWeekAndTeam(week, teamId) {
   return mockGames.filter((g) => g.week === week & g.homeTeamId === teamId || g.awayTeamId == teamId)
 }
+
+
+// --- Scores ---
+

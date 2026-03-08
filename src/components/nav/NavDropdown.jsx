@@ -20,7 +20,7 @@ function ChevronDown() {
 
 export default function NavDropdown({ label, items}) {
     return (
-        <li className="relative group ">
+        <li className="relative group">
             <div className="flex cursor-pointer items-center gap-1 ">
                 <span>{label}</span>
                 <ChevronDown />
