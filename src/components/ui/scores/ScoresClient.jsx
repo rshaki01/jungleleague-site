@@ -3,7 +3,6 @@ import {useState} from 'react';
 import ScoresFilter from '././ScoresFilter';
 import ScoresTable from './ScoresTable';
 
-import { getTeamById, getPlayersByTeamId } from '@/lib/data/helpers';
 
 export default function ScoresClient({division}) {
 

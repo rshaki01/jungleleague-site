@@ -157,7 +157,7 @@ export default function Navbar() {
                     onClick={() => setOpen(false)}
                     className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
                     >
-                    Competitive Statistcs
+                    Competitive Statistics
                     </Link>
                     <Link
                     href="/statistics/recreational"

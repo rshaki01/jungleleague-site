@@ -1790,9 +1790,9 @@ export const mockGames = [
           "tpPct": 0.0
         }
       ],
-      "northside-titans": [
+      "harbour-heat": [
         {
-          "playerId": "northside-titans-p1",
+          "playerId": "harbour-heat-p1",
           "points": 23,
           "rebounds": 6,
           "assists": 7,
@@ -1809,7 +1809,7 @@ export const mockGames = [
           "tpPct": 50.0
         },
         {
-          "playerId": "northside-titans-p2",
+          "playerId": "harbour-heat-p2",
           "points": 17,
           "rebounds": 4,
           "assists": 3,
@@ -1826,7 +1826,7 @@ export const mockGames = [
           "tpPct": 37.5
         },
         {
-          "playerId": "northside-titans-p3",
+          "playerId": "harbour-heat-p3",
           "points": 16,
           "rebounds": 8,
           "assists": 3,
@@ -1843,7 +1843,7 @@ export const mockGames = [
           "tpPct": 0.0
         },
         {
-          "playerId": "northside-titans-p4",
+          "playerId": "harbour-heat-p4",
           "points": 9,
           "rebounds": 3,
           "assists": 7,
@@ -1860,7 +1860,7 @@ export const mockGames = [
           "tpPct": 33.3
         },
         {
-          "playerId": "northside-titans-p5",
+          "playerId": "harbour-heat-p5",
           "points": 7,
           "rebounds": 6,
           "assists": 1,

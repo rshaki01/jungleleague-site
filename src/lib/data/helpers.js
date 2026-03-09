@@ -21,6 +21,10 @@ export function getPlayers() {
   return mockPlayerAggregates;
 }
 
+export function getPlayerByPlayerId(playerId) {
+  return mockPlayerAggregates.find((p) => p.id === playerId);
+}
+
 export function getPlayersByTeamId(teamId) {
   return mockPlayerAggregates.filter((p) => p.teamId === teamId);
 }
