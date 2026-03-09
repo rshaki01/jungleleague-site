@@ -1,4 +1,5 @@
 import StandingsTable from "@/components/ui/StandingsTable";
+import StatisticsClient from "@/components/ui/statistics/StatisticsClient";
 
 
 export default async function StatisticsPage({ params }) {
@@ -14,7 +15,7 @@ export default async function StatisticsPage({ params }) {
           : "Recreational Stas"}
       </h1>
       <p className="my-3 text-xs sm:text-sm text-gray-300 max-w-3xl mx-auto text-center">View the current leaders and player statistics. For player information, click on any player.</p>
-      {/* standings table here */}
+      <StatisticsClient />
       
     </div>
   );
