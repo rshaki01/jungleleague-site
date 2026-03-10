@@ -1,6 +1,7 @@
 "use client"
 import {useState} from 'react';
 import StatisticsFilter from './StatisticsFilter';
+import StatisticsTable from './StatisticsTable';
 
 export default function StatisticsClient({division}) {
 
@@ -11,6 +12,7 @@ export default function StatisticsClient({division}) {
     return (
         <div className="">
             <StatisticsFilter />
+            <StatisticsTable />
         </div>
       )
 

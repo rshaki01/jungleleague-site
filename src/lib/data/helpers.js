@@ -29,6 +29,11 @@ export function getPlayersByTeamId(teamId) {
   return mockPlayerAggregates.filter((p) => p.teamId === teamId);
 }
 
+export function getPlayersSortedByPoints() {
+  return [...mockPlayerAggregates].sort((a, b) => b.ppg - a.ppg);
+}
+
+
 // --- Sorting helpers (optional but handy) ---
 export function sortTeamsByWinsThenDiff(teams) {
   // expects diff like "+42" / "-3" OR a number; handles both
