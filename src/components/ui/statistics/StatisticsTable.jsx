@@ -1,14 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { getPlayersSortedByPoints, paginatePlayers } from "@/lib/data/helpers"
+import { getPlayersByDivision, getPlayersSortedByPoints, paginatePlayers } from "@/lib/data/helpers"
 
-export default function StatisticsTable() {
+export default function StatisticsTable({division}) {
 
-  const players = getPlayersSortedByPoints()
+  const players = getPlayersByDivision(division);
+  const sortedPlayers = getPlayersSortedByPoints(players).slice(0,10);
 
-  const filteredPlayers = players.slice(0, 10);
-
+  console.log(division);
 
   return (
     <div className="w-full">
@@ -24,7 +24,7 @@ export default function StatisticsTable() {
       </div>
 
       {/* Rows */}
-      {filteredPlayers.map((p) =>
+      {sortedPlayers.map((p) =>
         <div className="grid grid-cols-6 font-semibold border-b pb-2">
             <div>{p.name}</div>
             <div>{p.ppg}</div>

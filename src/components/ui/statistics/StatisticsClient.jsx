@@ -12,7 +12,7 @@ export default function StatisticsClient({division}) {
     return (
         <div className="">
             <StatisticsFilter />
-            <StatisticsTable />
+            <StatisticsTable division={division} />
         </div>
       )
 

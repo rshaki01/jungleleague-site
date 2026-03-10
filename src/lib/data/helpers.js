@@ -25,12 +25,17 @@ export function getPlayerByPlayerId(playerId) {
   return mockPlayerAggregates.find((p) => p.id === playerId);
 }
 
+export function getPlayersByDivision(division) {
+  console.log(division)
+  return mockPlayerAggregates.filter((p) => p.division === division);
+}
+
 export function getPlayersByTeamId(teamId) {
   return mockPlayerAggregates.filter((p) => p.teamId === teamId);
 }
 
-export function getPlayersSortedByPoints() {
-  return [...mockPlayerAggregates].sort((a, b) => b.ppg - a.ppg);
+export function getPlayersSortedByPoints(players) {
+  return [...players].sort((a, b) => b.ppg - a.ppg);
 }
 
 

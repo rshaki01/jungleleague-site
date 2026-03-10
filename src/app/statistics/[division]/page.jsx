@@ -15,7 +15,7 @@ export default async function StatisticsPage({ params }) {
           : "Recreational Stats"}
       </h1>
       <p className="my-3 text-xs sm:text-sm text-gray-300 max-w-3xl mx-auto text-center">View the current leaders and player statistics. For player information, click on any player.</p>
-      <StatisticsClient />
+      <StatisticsClient division={division}/>
       
     </div>
   );
