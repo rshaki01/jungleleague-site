@@ -1,8 +1,12 @@
 "use client"
+import { useState } from 'react';
 import { mockStandings } from '@/lib/data/mockStandings';
 import { getTeamsByDivision } from '@/lib/data/helpers';
 
-export default function StatisticsFilter({division, week, team, setWeek, setTeam}) {
+export default function StatisticsFilter({division}) {
+
+    const [search, setSearch] = useState("")
+
 
     const teams = getTeamsByDivision(division);
     // Calculate weeks to display based on division selected
@@ -17,7 +21,12 @@ export default function StatisticsFilter({division, week, team, setWeek, setTeam
           {/*Search input for filtering by player */}
           
           <div className="mt-3 flex flex-col gap-2">
-            <input type="text" placeholder="Search players..." className="w-full px-4 py-3 bg-gray-200/80 border border-orange-200/50  rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" value=""></input>
+            <input 
+                type="text"
+                placeholder="Search players..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)} className="w-full px-4 py-3 bg-gray-200/80 border border-orange-200/50  rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            />
           </div>
 
           {/* Filter leader by statistic */}
