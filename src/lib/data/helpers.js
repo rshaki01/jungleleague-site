@@ -26,7 +26,6 @@ export function getPlayerByPlayerId(playerId) {
 }
 
 export function getPlayersByDivision(division) {
-  console.log(division)
   return mockPlayerAggregates.filter((p) => p.division === division);
 }
 
@@ -38,6 +37,9 @@ export function getPlayersSortedByPoints(players) {
   return [...players].sort((a, b) => b.ppg - a.ppg);
 }
 
+export function searchPlayers(division, searchTerm) {
+  
+}
 
 // --- Sorting helpers (optional but handy) ---
 export function sortTeamsByWinsThenDiff(teams) {

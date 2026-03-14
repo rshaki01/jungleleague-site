@@ -8,8 +8,6 @@ export default function StatisticsTable({division}) {
   const players = getPlayersByDivision(division);
   const sortedPlayers = getPlayersSortedByPoints(players).slice(0,10);
 
-  console.log(division);
-
   return (
     <div className="w-full">
 
@@ -25,7 +23,7 @@ export default function StatisticsTable({division}) {
 
       {/* Rows */}
       {sortedPlayers.map((p) =>
-        <div className="grid grid-cols-6 font-semibold border-b pb-2">
+        <div key={p.id} className="grid grid-cols-6 font-semibold border-b pb-2">
             <div>{p.name}</div>
             <div>{p.ppg}</div>
         </div>

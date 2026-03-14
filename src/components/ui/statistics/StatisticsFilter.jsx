@@ -3,9 +3,8 @@ import { useState } from 'react';
 import { mockStandings } from '@/lib/data/mockStandings';
 import { getTeamsByDivision } from '@/lib/data/helpers';
 
-export default function StatisticsFilter({division}) {
+export default function StatisticsFilter({division, searchTerm, setSearchTerm}) {
 
-    const [search, setSearch] = useState("")
 
 
     const teams = getTeamsByDivision(division);
@@ -24,8 +23,8 @@ export default function StatisticsFilter({division}) {
             <input 
                 type="text"
                 placeholder="Search players..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)} className="w-full px-4 py-3 bg-gray-200/80 border border-orange-200/50  rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)} className="w-full px-4 py-3 bg-gray-200/80 border border-orange-200/50  rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
           </div>
 
