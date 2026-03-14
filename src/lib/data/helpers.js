@@ -38,7 +38,14 @@ export function getPlayersSortedByPoints(players) {
 }
 
 export function searchPlayers(division, searchTerm) {
-  
+
+  const cleanSearchTerm = searchTerm.toLowerCase().trim();
+
+  if (cleanSearchTerm === "") {
+    return [];
+  }
+
+  return mockPlayerAggregates.filter((p) => p.division === division && p.name.toLowerCase().includes(cleanSearchTerm)).slice(0,5)
 }
 
 // --- Sorting helpers (optional but handy) ---
