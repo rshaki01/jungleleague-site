@@ -64,7 +64,7 @@ export default function Navbar() {
                     label="Statistics"
                     items={[
                         {text: "Competitive", href: "/statistics/competitive"},
-                        {text: "Recreational", href: "/scores/recreational"}
+                        {text: "Recreational", href: "/statistics/recreational"}
 
                     ]}
                 />

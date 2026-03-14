@@ -20,9 +20,7 @@ export default function StatisticsClient({division}) {
 
     return (
         <div className="">
-            <StatisticsFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-            {searchTerm}
-            
+            <StatisticsFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>            
             <SearchResultsDropDown division={division}/>
             <StatisticsTable division={division} />
         </div>

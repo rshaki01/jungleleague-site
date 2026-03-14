@@ -1,5 +1,4 @@
 "use client"
-import { useState } from 'react';
 import { mockStandings } from '@/lib/data/mockStandings';
 import { getTeamsByDivision } from '@/lib/data/helpers';
 
