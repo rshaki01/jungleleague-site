@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { getTeamById, getGames, getPlayerByPlayerId, getPlayersByTeamId, getGamesByWeekAndTeam, getGamesByWeek } from "@/lib/data/helpers";
+import { getTeamById, getGames, getPlayerByPlayerId } from "@/lib/data/helpers";
 
 export default function ScoresTable({division, week, teamId}) {
 
