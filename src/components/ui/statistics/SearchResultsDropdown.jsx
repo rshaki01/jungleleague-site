@@ -1,12 +1,11 @@
 "use client"
-import {useState} from 'react';
 
 export default function SearchResultsDropDown({resultedPlayers}) {
 
    
     return (
-        <div className="l">
-            {resultedPlayers.map((p) => <div className="flex flex-col">
+        <div className=" ">
+            {resultedPlayers.map((p) => <div key={p.id} className="flex flex-col mt-2">
                 {p.name}
             </div>
             )}
@@ -14,3 +13,5 @@ export default function SearchResultsDropDown({resultedPlayers}) {
       )
 
 }
+
+

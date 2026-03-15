@@ -3,14 +3,12 @@ import {useState} from 'react';
 import { searchPlayers } from '@/lib/data/helpers';
 import StatisticsFilter from './StatisticsFilter';
 import StatisticsTable from './StatisticsTable';
-import SearchResultsDropDown from './SearchResultsDropdown';
 
 export default function StatisticsClient({division}) {
 
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedPlayer, setSelectedPlayer] = useState('');
     const filteredResults = searchPlayers(division, searchTerm);
-    const isDropdownOpen = filteredResults.length > 0;
 
 
     console.log(filteredResults);
@@ -20,8 +18,7 @@ export default function StatisticsClient({division}) {
 
     return (
         <div className="">
-            <StatisticsFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>            
-            {isDropdownOpen && <SearchResultsDropDown resultedPlayers={filteredResults}/>}
+            <StatisticsFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm} resultedPlayers={filteredResults}/>            
             <StatisticsTable division={division} />
         </div>
       )
