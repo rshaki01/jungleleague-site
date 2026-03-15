@@ -3,7 +3,6 @@ import { getTeamById } from "@/lib/data/helpers";
 
 
 export default function SearchResultsDropDown({resultedPlayers}) {
-
    
     return (
         <div className=" ">

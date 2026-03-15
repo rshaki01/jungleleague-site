@@ -1,32 +1,44 @@
 "use client"
 
-import { getPlayersByDivision, getPlayersSortedByPoints, paginatePlayers } from "@/lib/data/helpers"
+import { getPlayersByDivision, getPlayersSortedByPoints } from "@/lib/data/helpers"
 
 export default function StatisticsTable({division}) {
 
   const players = getPlayersByDivision(division);
-  const sortedPlayers = getPlayersSortedByPoints(players).slice(0,10);
+  const leader = getPlayersSortedByPoints(players)[0];
+  const sortedPlayers = getPlayersSortedByPoints(players).slice(1,10);
 
   return (
-    <div className="w-full">
+    <div className="w-full m-auto mt-5  p-3 rounded-xl overflow-hidden bg-gradient-to-br from-gray-800/50 to-gray-900/30 border border-yellow-400/20">
 
-      {/* Header */}
-      <div className="grid grid-cols-6 font-semibold border-b pb-2">
-        <div>#</div>
-        <div>Player</div>
-        <div>Team</div>
-        <div>PPG</div>
-        <div>RPG</div>
-        <div>APG</div>
+      {/* Header that includes leader*/}
+      <div className="font-semibold gap-4 font-semibold overflow-hidden">
+        <div className="border-b border-gray-300 py-1 text-sm sm:text-base">POINTS PER GAME</div>
+        <div className="pt-2 text-sm flex justify-between">
+          <span>
+            {leader.name}
+          </span>
+          <span>
+            {leader.ppg}
+          </span>
+        </div>
       </div>
 
       {/* Rows */}
-      {sortedPlayers.map((p) =>
-        <div key={p.id} className="grid grid-cols-6 font-semibold border-b pb-2">
-            <div>{p.name}</div>
+      <div className="bg-slate-900 rounded-md">
+        {sortedPlayers.map((p) =>
+        <div key={p.id} className="w-full p-2  text-xs font-semibold border-b pb-2 border-gray-300/30 ">
+          <div className="flex justify-between">
+            <div >{p.name}</div>
             <div>{p.ppg}</div>
+          </div>
+            
         </div>
-      )}
+        )}
+      </div>
+      
+
+      
      
 
       
