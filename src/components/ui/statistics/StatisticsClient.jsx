@@ -9,9 +9,9 @@ export default function StatisticsClient({division}) {
 
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedPlayer, setSelectedPlayer] = useState('');
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
     const filteredResults = searchPlayers(division, searchTerm);
+    const isDropdownOpen = filteredResults.length > 0;
+
 
     console.log(filteredResults);
 
@@ -21,7 +21,7 @@ export default function StatisticsClient({division}) {
     return (
         <div className="">
             <StatisticsFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>            
-            <SearchResultsDropDown division={division}/>
+            {isDropdownOpen && <SearchResultsDropDown resultedPlayers={filteredResults}/>}
             <StatisticsTable division={division} />
         </div>
       )

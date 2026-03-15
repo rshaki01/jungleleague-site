@@ -107,7 +107,30 @@ export default function Navbar() {
                 }
             `} 
         >
+
+
             <div className="flex flex-col space-y-2 px-4 py-3">
+
+                <span className="font-bold pb-1 border-b border-zinc-100/20">
+                    Standings
+                </span>
+                <div className="flex flex-col space-y-1 text-gray-100">
+                    <Link
+                        href="/standings/competitive"
+                        onClick={() => setOpen(false)}
+                        className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
+                        >
+                        Competitive Standings
+                    </Link>
+                    <Link
+                        href="/standings/recreational"
+                        onClick={() => setOpen(false)}
+                        className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
+                        >
+                        Recreational Standings
+                    </Link>
+                </div>
+
                 <span className="font-bold pb-1 border-b border-zinc-100/20">
                     Schedule
                 </span>
@@ -165,27 +188,6 @@ export default function Navbar() {
                     className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
                     >
                     Recreational Statistics
-                    </Link>
-                </div>
-                    
-
-                <span className="font-bold pb-1 border-b border-zinc-100/20">
-                    Standings
-                </span>
-                <div className="flex flex-col space-y-1 text-gray-100">
-                    <Link
-                    href="/standings/competitive"
-                    onClick={() => setOpen(false)}
-                    className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
-                    >
-                    Competitive Standings
-                    </Link>
-                    <Link
-                    href="/standings/recreational"
-                    onClick={() => setOpen(false)}
-                    className="font-medium hover:bg-yellow-200/30 ml-3 rounded-sm p-1"
-                    >
-                    Recreational Standings
                     </Link>
                 </div>
             </div>
