@@ -3,7 +3,7 @@ import { mockStandings } from '@/lib/data/mockStandings';
 import { getTeamsByDivision } from '@/lib/data/helpers';
 import SearchResultsDropDown from './SearchResultsDropdown';
 
-export default function StatisticsFilter({division, searchTerm, setSearchTerm, resultedPlayers}) {
+export default function StatisticsFilter({division, searchTerm, setSearchTerm, resultedPlayers, onSelectPlayer}) {
 
     const isDropdownOpen = resultedPlayers.length > 0;
 
@@ -25,7 +25,7 @@ export default function StatisticsFilter({division, searchTerm, setSearchTerm, r
             />
           </div>
 
-          {isDropdownOpen && <SearchResultsDropDown resultedPlayers={resultedPlayers}/>}
+          {isDropdownOpen && <SearchResultsDropDown resultedPlayers={resultedPlayers} onSelectPlayer={onSelectPlayer} />}
           
         </div>
       )
