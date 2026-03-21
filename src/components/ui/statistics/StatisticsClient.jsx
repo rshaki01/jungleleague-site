@@ -8,6 +8,7 @@ export default function StatisticsClient({division}) {
 
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedPlayer, setSelectedPlayer] = useState('');
+    const [isModalOpen, setModalOpen] = useState(false);
     const filteredResults = searchPlayers(division, searchTerm);
 
 
