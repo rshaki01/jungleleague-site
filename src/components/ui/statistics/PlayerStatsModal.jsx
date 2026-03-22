@@ -19,7 +19,7 @@ export default function PlayerStatsModal({player, setModal}) {
                     </div>
                            
                 </div>
-                <div className="font-bold text-xl text-center mt-5">Season Averages</div>
+                <div className="font-bold text-xl text-center mt-5">SEASON AVERAGES</div>
                 <PlayerStatsTable player={player}/>  
             </div>
         </div>
