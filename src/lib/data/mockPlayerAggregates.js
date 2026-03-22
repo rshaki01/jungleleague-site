@@ -88,16 +88,16 @@ export const mockPlayerAggregates = [
   { id: "central-city-kings-p4", teamId: "central-city-kings", division: "competitive", number: 0, name: "Hassan Ali", gp: 10, ppg: 10.0, rpg: 3.2, apg: 4.3, spg: 1.0, bpg: 0.2, fgm: 36, fga: 86, fgPct: 41.9, ftm: 10, fta: 13, ftPct: 76.9, tpm: 8, tpa: 24, tpPct: 33.3 },
   { id: "central-city-kings-p5", teamId: "central-city-kings", division: "competitive", number: 0, name: "Arjun Mehta", gp: 10, ppg: 7.4, rpg: 4.3, apg: 1.3, spg: 0.5, bpg: 0.6, fgm: 28, fga: 68, fgPct: 41.2, ftm: 6, fta: 9, ftPct: 66.7, tpm: 5, tpa: 18, tpPct: 27.8 },
 
-  /* Recreational Players */
-
   // -------------------------
   // harbour-heat (5)
   // -------------------------
-  { id: "harbour-heat-p1", teamId: "harbour-heat", division: "recreational", number: 0, name: "Lucas Perry", gp: 10, ppg: 16.7, rpg: 5.1, apg: 4.7, spg: 1.3, bpg: 0.4, fgm: 62, fga: 140, fgPct: 44.3, ftm: 26, fta: 34, ftPct: 76.5, tpm: 18, tpa: 56, tpPct: 32.1 },
-  { id: "harbour-heat-p2", teamId: "harbour-heat", division: "recreational", number: 0, name: "Chris Jackson", gp: 10, ppg: 13.1, rpg: 6.2, apg: 2.6, spg: 0.9, bpg: 0.8, fgm: 48, fga: 110, fgPct: 43.6, ftm: 14, fta: 20, ftPct: 70.0, tpm: 11, tpa: 35, tpPct: 31.4 },
-  { id: "harbour-heat-p3", teamId: "harbour-heat", division: "recreational", number: 0, name: "Oliver Stone", gp: 10, ppg: 11.7, rpg: 7.7, apg: 1.9, spg: 0.6, bpg: 1.1, fgm: 43, fga: 98, fgPct: 43.9, ftm: 10, fta: 15, ftPct: 66.7, tpm: 6, tpa: 20, tpPct: 30.0 },
-  { id: "harbour-heat-p4", teamId: "harbour-heat", division: "recreational", number: 0, name: "Mason Lee", gp: 10, ppg: 9.6, rpg: 3.2, apg: 4.0, spg: 1.0, bpg: 0.2, fgm: 34, fga: 84, fgPct: 40.5, ftm: 10, fta: 13, ftPct: 76.9, tpm: 7, tpa: 24, tpPct: 29.2 },
-  { id: "harbour-heat-p5", teamId: "harbour-heat", division: "recreational", number: 0, name: "Kai Brown", gp: 10, ppg: 7.0, rpg: 4.0, apg: 1.2, spg: 0.5, bpg: 0.5, fgm: 25, fga: 65, fgPct: 38.5, ftm: 6, fta: 10, ftPct: 60.0, tpm: 4, tpa: 18, tpPct: 22.2 },
+  { id: "harbour-heat-p1", teamId: "harbour-heat", division: "competitive", number: 0, name: "Lucas Perry", gp: 10, ppg: 16.7, rpg: 5.1, apg: 4.7, spg: 1.3, bpg: 0.4, fgm: 62, fga: 140, fgPct: 44.3, ftm: 26, fta: 34, ftPct: 76.5, tpm: 18, tpa: 56, tpPct: 32.1 },
+  { id: "harbour-heat-p2", teamId: "harbour-heat", division: "competitive", number: 0, name: "Chris Jackson", gp: 10, ppg: 13.1, rpg: 6.2, apg: 2.6, spg: 0.9, bpg: 0.8, fgm: 48, fga: 110, fgPct: 43.6, ftm: 14, fta: 20, ftPct: 70.0, tpm: 11, tpa: 35, tpPct: 31.4 },
+  { id: "harbour-heat-p3", teamId: "harbour-heat", division: "competitive", number: 0, name: "Oliver Stone", gp: 10, ppg: 11.7, rpg: 7.7, apg: 1.9, spg: 0.6, bpg: 1.1, fgm: 43, fga: 98, fgPct: 43.9, ftm: 10, fta: 15, ftPct: 66.7, tpm: 6, tpa: 20, tpPct: 30.0 },
+  { id: "harbour-heat-p4", teamId: "harbour-heat", division: "competitive", number: 0, name: "Mason Lee", gp: 10, ppg: 9.6, rpg: 3.2, apg: 4.0, spg: 1.0, bpg: 0.2, fgm: 34, fga: 84, fgPct: 40.5, ftm: 10, fta: 13, ftPct: 76.9, tpm: 7, tpa: 24, tpPct: 29.2 },
+  { id: "harbour-heat-p5", teamId: "harbour-heat", division: "competitive", number: 0, name: "Kai Brown", gp: 10, ppg: 7.0, rpg: 4.0, apg: 1.2, spg: 0.5, bpg: 0.5, fgm: 25, fga: 65, fgPct: 38.5, ftm: 6, fta: 10, ftPct: 60.0, tpm: 4, tpa: 18, tpPct: 22.2 },
+
+/* Recreational Players */
 
   // -------------------------
   // lakeside-legends (5)

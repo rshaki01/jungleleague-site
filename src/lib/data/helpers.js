@@ -3,6 +3,22 @@ import { mockStandings } from "./mockStandings";
 import { mockPlayerAggregates } from "./mockPlayerAggregates";
 import { mockGames } from "./mockGames";
 
+{/* --- Firestore Helpers --- */}
+
+// --- Firestore Players
+
+export function searchPlayersInArray(players, searchTerm) {
+  const cleanSearchTerm = searchTerm.toLowerCase().trim();
+
+  if (cleanSearchTerm === "") {
+    return [];
+  }
+
+  return players.filter((p) =>
+    p.name.toLowerCase().includes(cleanSearchTerm)
+  );
+}
+
 // --- Teams ---
 export function getTeams() {
   return mockStandings;
