@@ -1,6 +1,7 @@
 "use client"
 import {useState} from 'react';
 import { getTeamById } from '@/lib/data/helpers';
+import PlayerStatsTable from './PlayerStatsTable';
 
 
 export default function PlayerStatsModal({player, setModal}) {
@@ -14,10 +15,12 @@ export default function PlayerStatsModal({player, setModal}) {
                 <div className="flex justify-between py-2 w-full bg-gradient-to-br from-yellow-300/80 to-yellow-600/80 border border-yellow-400/20 text-white font-bold  px-4 rounded">
                     <div className='flex flex-col'>
                         <h1 className="text-slate-50 text-xl font-bold text-shadow-lg">{player.name}</h1>
-                        {/* <span className='text-sm items-align '>({getTeamById(player.teamId)})</span> */}
-                        
-                    </div>         
+                        <span className='text-sm items-align'>({getTeamById(player.teamId).name})</span>
+                    </div>
+                           
                 </div>
+                <div className="font-bold text-xl text-center mt-5">Season Averages</div>
+                <PlayerStatsTable player={player}/>  
             </div>
         </div>
       )
