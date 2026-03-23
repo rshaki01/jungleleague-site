@@ -1,12 +1,11 @@
 "use client"
 
-import { getPlayersByDivision, getPlayersSortedByPoints } from "@/lib/data/helpers"
+import { getPlayersSortedByPoints } from "@/lib/data/helpers"
 
-export default function StatisticsTable({division}) {
+export default function StatisticsTable({players}) {
 
-  const players = getPlayersByDivision(division);
-  const leader = getPlayersSortedByPoints(players)[0];
-  const sortedPlayers = getPlayersSortedByPoints(players).slice(1,10);
+  console.log(players);
+  const sortedPlayers = getPlayersSortedByPoints(players).slice(0,10);
 
   return (
     <div className="w-full m-auto mt-5  p-3 rounded-xl overflow-hidden bg-gradient-to-br from-gray-800/50 to-gray-900/30 border border-yellow-400/20">
@@ -16,10 +15,10 @@ export default function StatisticsTable({division}) {
         <div className="border-b border-gray-300 py-1 text-sm sm:text-base">POINTS PER GAME</div>
         <div className="pt-2 text-sm flex justify-between">
           <span>
-            {leader.name}
+            {sortedPlayers.length > 1 ? sortedPlayers[0].name : ''}
           </span>
           <span>
-            {leader.ppg}
+            {/* {sortedPlayers[0].ppg} */}
           </span>
         </div>
       </div>

@@ -19,6 +19,12 @@ export function searchPlayersInArray(players, searchTerm) {
   );
 }
 
+export function getPlayersSortedByPoints(players) {
+  return [...players].sort((a, b) => b.ppg - a.ppg);
+}
+
+{/* --- Mock Data Helpers --- */}
+
 // --- Teams ---
 export function getTeams() {
   return mockStandings;
@@ -47,10 +53,6 @@ export function getPlayersByDivision(division) {
 
 export function getPlayersByTeamId(teamId) {
   return mockPlayerAggregates.filter((p) => p.teamId === teamId);
-}
-
-export function getPlayersSortedByPoints(players) {
-  return [...players].sort((a, b) => b.ppg - a.ppg);
 }
 
 export function searchPlayers(division, searchTerm) {
