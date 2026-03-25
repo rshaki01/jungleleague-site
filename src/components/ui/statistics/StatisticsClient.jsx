@@ -6,8 +6,6 @@ import StatisticsTable from './StatisticsTable';
 import PlayerStatsModal from './PlayerStatsModal';
 import { getPlayersFromFirestore } from '@/lib/firebase/players';
 
-
-
 export default function StatisticsClient({division}) {
 
     const handleSelectPlayer = (player) => {
