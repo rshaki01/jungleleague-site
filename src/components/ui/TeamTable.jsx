@@ -1,16 +1,6 @@
 "use client"
-import {useState} from 'react';
-import { mockStandings } from '@/lib/data/mockStandings';
-import { mockPlayerAggregates } from '@/lib/data/mockPlayerAggregates';
-import { getTeamById, getPlayersByTeamId } from '@/lib/data/helpers';
 
-export default function TeamTable({teamID}) {
-
-     if (!open) return null
-
-     const players = getPlayersByTeamId(teamID);
-
-     // bg-gradient-to-br from-blue-400/10 to-blue-600/10 border border-blue-400/20
+export default function TeamTable({players}) {
 
     return (
         <div className="w-full m-auto mt-5 bg-gradient-to-br from-blue-400/10 to-blue-600/10 border border-blue-400/20 rounded-xl overflow-hidden"> 

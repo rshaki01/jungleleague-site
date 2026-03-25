@@ -1,18 +1,12 @@
 "use client"
-import {useState} from 'react';
-import { mockStandings } from '@/lib/data/mockStandings';
-import { mockPlayerAggregates } from '@/lib/data/mockPlayerAggregates';
-import { getTeamById, getPlayersByTeamId } from '@/lib/data/helpers';
+import { getPlayersByTeamId, getTeamById } from '@/lib/data/helpers';
 import TeamTable from './TeamTable';
 
-export default function TeamModal({open, onClose, teamID}) {
+export default function TeamModal({open, onClose, teamID, teams, players}) {
 
-     if (!open) return null
-
-     const players = getPlayersByTeamId(teamID);
-     const team = getTeamById(teamID);
-
-     // bg-gradient-to-br from-blue-400/10 to-blue-600/10 border border-blue-400/20
+    const team = getTeamById(teamID, teams);
+    const teamPlayers = getPlayersByTeamId(teamID, players);
+    if (!open) return null
 
     return (
         <div className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm transition-opacity duration-500 flex items-center justify-center" onClick={onClose}>
@@ -24,11 +18,8 @@ export default function TeamModal({open, onClose, teamID}) {
                 
               </div>         
             </div>
-            <TeamTable teamID={teamID}/>
-
+            <TeamTable players={teamPlayers}/>
           </div>
-
-    
         </div>
       )
 

@@ -1,20 +1,40 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TeamModal from "./TeamModal";
-import { mockStandings } from "@/lib/data/mockStandings";
+import { getTeamsFromFirestore } from "@/lib/firebase/teams";
+import { getPlayersFromFirestore } from "@/lib/firebase/players";
+import { sortTeamsByWinsThenDiff } from "@/lib/data/helpers";
 
 export default function StandingsTable({division}) {
 
-
+  const [teams, setTeams] = useState([]);
+  const [players,setPlayers] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [teamID, setTeamID] = useState('');
 
-  const teams = mockStandings.filter((team) => team.division === division);
+  useEffect(() => {
+          async function loadTeams() {
+              const data = await getTeamsFromFirestore(division);
+              console.log("Firestore teams:", data);
+              setTeams(sortTeamsByWinsThenDiff(data));
+          }
+        
+          async function loadPlayers() {
+              const data = await getPlayersFromFirestore(division);
+              setPlayers(data);
+          }
+          loadTeams();
+          loadPlayers();
+  }, [division]);
+
+  {/* Get Mock Teams */}
+  // const teams = mockStandings.filter((team) => team.division === division);
+
 
   return (
     <div className="w-full m-auto mt-5 bg-gradient-to-br from-gray-800/50 to-gray-900/30 rounded-xl overflow-hidden">
-        <TeamModal open={showModal} onClose={() => setShowModal(false)} teamID={teamID}/>
+        <TeamModal open={showModal} onClose={() => setShowModal(false)} teamID={teamID} teams={teams} players={players}/>
         
         {/* Table Head */}
         <div className="hidden sm:grid grid-cols-8 gap-4 p-3 text-xs md:text-sm font-semibold text-gray-300 bg-gradient-to-br from-blue-400/10 to-blue-600/10 ">
