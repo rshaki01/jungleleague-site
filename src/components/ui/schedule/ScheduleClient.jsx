@@ -14,7 +14,7 @@ export default function ScheduleClient({division}) {
               async function loadTeams() {
                   const data = await getTeamsFromFirestore(division);
                   console.log("Firestore teams:", data);
-                  setTeams(sortTeamsByWinsThenDiff(data));
+                  setTeams(data);
               }
               loadTeams();
       }, [division]);

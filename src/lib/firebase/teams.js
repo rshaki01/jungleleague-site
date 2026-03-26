@@ -10,6 +10,9 @@ export async function getTeamsFromFirestore(division) {
 
     const snapshot = await getDocs(q);
 
+    console.log("query division:", division);
+    console.log("snapshot size:", snapshot.size);
+
     return snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
