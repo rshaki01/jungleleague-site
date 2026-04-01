@@ -89,8 +89,8 @@ export function sortPlayersByPPG(players) {
 
 // --- Games ---
 
-export function getGames(division, week, teamId) {
-  return mockGames.filter((g) => {
+export function getGames(division, week, teamId, games) {
+  return games.filter((g) => {
     const matchesDivision = g.division === division;
     const matchesWeek = g.week === Number(week);
     const matchesTeam =

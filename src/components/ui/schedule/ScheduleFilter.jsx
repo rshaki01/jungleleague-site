@@ -7,7 +7,6 @@ export default function ScheduleFilter({division, week, teamId, setWeek, setTeam
     // Calculate weeks to display based on division selected
     const weeksInSeason = division === "recreational" ? 8 : 10;
 
-    console.log(teams);
 
     return (
         <div className="mt-5 m-auto w-full bg-gradient-to-b from-yellow-300/80 to-yellow-500/80 rounded-xl p-5" >

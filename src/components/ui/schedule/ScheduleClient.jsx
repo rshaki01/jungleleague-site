@@ -3,12 +3,14 @@ import {useState, useEffect} from 'react';
 import ScheduleFilter from './ScheduleFilter';
 import ScheduleTable from './ScheduleTable';
 import { getTeamsFromFirestore } from '@/lib/firebase/teams';
+import { getGamesFromFirestore } from '@/lib/firebase/games';
 
 export default function ScheduleClient({division}) {
 
     const [selectedWeek, setSelectedWeek] = useState(1);
     const [selectedTeamId, setSelectedTeamId] = useState("All");
     const [teams, setTeams] = useState([]);
+    const [games, setGames] = useState([]);
 
     useEffect(() => {
               async function loadTeams() {
@@ -16,7 +18,15 @@ export default function ScheduleClient({division}) {
                   console.log("Firestore teams:", data);
                   setTeams(data);
               }
+
+              async function loadGames() {
+                  const data = await getGamesFromFirestore(division);
+                  console.log("Firestore Games:", data);
+                  setGames(data);
+
+              }
               loadTeams();
+              loadGames();
       }, [division]);
     
 
@@ -32,7 +42,12 @@ export default function ScheduleClient({division}) {
                 teams={teams}
             />
 
-            <ScheduleTable division={division} week={selectedWeek} teamId={selectedTeamId} teams={teams} />
+            <ScheduleTable
+                division={division}
+                week={selectedWeek}
+                teamId={selectedTeamId}
+                teams={teams}
+                games={games} />
         </div>
       )
 

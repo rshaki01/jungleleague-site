@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getGamesFromFirestore } from "@/lib/firebase/games";
 import { getTeamById, getGames, getPlayerByPlayerId } from "@/lib/data/helpers";
 
 export default function ScoresTable({division, week, teamId}) {

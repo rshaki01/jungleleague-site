@@ -44,5 +44,4 @@ export async function getPlayersByTeamFromFirestore(teamId) {
         id: doc.id,
         ...doc.data(),
     }))
-
 }
