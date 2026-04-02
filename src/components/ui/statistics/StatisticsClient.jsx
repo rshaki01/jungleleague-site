@@ -28,24 +28,25 @@ export default function StatisticsClient({division}) {
     useEffect(() => {
         async function loadPlayers() {
             const data = await getPlayersFromFirestore(division);
-            console.log("Firestore players:", data);
+            // console.log("Firestore players:", data);
             setPlayers(data);
         }
         async function loadTeams() {
             const data = await getTeamsFromFirestore(division);
-            console.log("Firestore teams:", data);
+            // console.log("Firestore teams:", data);
             setTeams(data);
             }
         loadPlayers();
         loadTeams();
     }, [division]);
 
-    console.log("players in client", players);
+    // console.log("players in client", players);
 
     return (
         <div className="">
             <StatisticsFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm} resultedPlayers={firestoreFilteredResults} onSelectPlayer={handleSelectPlayer} teams={teams}/>            
-            <StatisticsTable players={players} />
+            <h2 className="text-xl font-semibold text-center mt-5">Leaders</h2>
+            <StatisticsTable players={players} teams={teams}/>
             
             {isModalOpen && <PlayerStatsModal player={selectedPlayer} setModal={setModal} teams={teams}/>}
         </div>
