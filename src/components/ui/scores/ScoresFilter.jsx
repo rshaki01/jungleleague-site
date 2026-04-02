@@ -2,9 +2,9 @@
 import { mockStandings } from '@/lib/data/mockStandings';
 import { getTeamsByDivision } from '@/lib/data/helpers';
 
-export default function ScoresFilter({division, week, team, setWeek, setTeam}) {
+export default function ScoresFilter({division, week, team, setWeek, setTeam, teams}) {
 
-    const teams = getTeamsByDivision(division);
+    // const teams = getTeamsByDivision(division);
     // Calculate weeks to display based on division selected
     const weeksInSeason = division === "recreational" ? 8 : 10;
 
