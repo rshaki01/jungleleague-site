@@ -1,9 +1,7 @@
 "use client"
-import { mockStandings } from '@/lib/data/mockStandings';
-import { getTeamsByDivision } from '@/lib/data/helpers';
 import SearchResultsDropDown from './SearchResultsDropdown';
 
-export default function StatisticsFilter({division, searchTerm, setSearchTerm, resultedPlayers, onSelectPlayer}) {
+export default function StatisticsFilter({division, searchTerm, setSearchTerm, resultedPlayers, onSelectPlayer, teams}) {
 
     const isDropdownOpen = resultedPlayers.length > 0;
 
@@ -25,7 +23,7 @@ export default function StatisticsFilter({division, searchTerm, setSearchTerm, r
             />
           </div>
 
-          {isDropdownOpen && <SearchResultsDropDown resultedPlayers={resultedPlayers} onSelectPlayer={onSelectPlayer} />}
+          {isDropdownOpen && <SearchResultsDropDown resultedPlayers={resultedPlayers} onSelectPlayer={onSelectPlayer} teams={teams}/>}
           
         </div>
       )

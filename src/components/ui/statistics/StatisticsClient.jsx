@@ -5,6 +5,7 @@ import StatisticsFilter from './StatisticsFilter';
 import StatisticsTable from './StatisticsTable';
 import PlayerStatsModal from './PlayerStatsModal';
 import { getPlayersFromFirestore } from '@/lib/firebase/players';
+import { getTeamsFromFirestore } from '@/lib/firebase/teams';
 
 export default function StatisticsClient({division}) {
 
@@ -15,6 +16,7 @@ export default function StatisticsClient({division}) {
     };
 
     const [players, setPlayers] = useState([]); // contains all players from respective division
+    const [teams, setTeams] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedPlayer, setSelectedPlayer] = useState("");
     const [isModalOpen, setModal] = useState(false);
@@ -29,17 +31,23 @@ export default function StatisticsClient({division}) {
             console.log("Firestore players:", data);
             setPlayers(data);
         }
+        async function loadTeams() {
+            const data = await getTeamsFromFirestore(division);
+            console.log("Firestore teams:", data);
+            setTeams(data);
+            }
         loadPlayers();
+        loadTeams();
     }, [division]);
 
     console.log("players in client", players);
 
     return (
         <div className="">
-            <StatisticsFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm} resultedPlayers={firestoreFilteredResults} onSelectPlayer={handleSelectPlayer}/>            
+            <StatisticsFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm} resultedPlayers={firestoreFilteredResults} onSelectPlayer={handleSelectPlayer} teams={teams}/>            
             <StatisticsTable players={players} />
             
-            {isModalOpen && <PlayerStatsModal player={selectedPlayer} setModal={setModal}/>}
+            {isModalOpen && <PlayerStatsModal player={selectedPlayer} setModal={setModal} teams={teams}/>}
         </div>
       )
 

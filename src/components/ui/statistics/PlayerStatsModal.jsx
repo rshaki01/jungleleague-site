@@ -3,7 +3,7 @@ import { getTeamById } from '@/lib/data/helpers';
 import PlayerStatsTable from './PlayerStatsTable';
 
 
-export default function PlayerStatsModal({player, setModal}) {
+export default function PlayerStatsModal({player, setModal, teams}) {
 
     return (
         <div className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm transition-opacity duration-500 flex items-center justify-center" onClick={() => setModal(false)}>
@@ -11,7 +11,7 @@ export default function PlayerStatsModal({player, setModal}) {
                 <div className="flex justify-between py-2 w-full bg-gradient-to-br from-yellow-300/80 to-yellow-600/80 border border-yellow-400/20 text-white font-bold  px-4 rounded">
                     <div className='flex flex-col'>
                         <h1 className="text-slate-50 text-xl font-bold text-shadow-lg">{player.name}</h1>
-                        <span className='text-sm items-align'>({getTeamById(player.teamId).name})</span>
+                        <span className='text-sm items-align'>({getTeamById(player.teamId, teams).name})</span>
                     </div>
                            
                 </div>
