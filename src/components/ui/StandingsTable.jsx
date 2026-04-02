@@ -6,27 +6,27 @@ import { getTeamsFromFirestore } from "@/lib/firebase/teams";
 import { getPlayersFromFirestore } from "@/lib/firebase/players";
 import { sortTeamsByWinsThenDiff } from "@/lib/data/helpers";
 
-export default function StandingsTable({division}) {
+export default function StandingsTable({division, initialTeams, initialPlayers}) {
 
-  const [teams, setTeams] = useState([]);
-  const [players,setPlayers] = useState([]);
+  const [teams, setTeams] = useState(sortTeamsByWinsThenDiff(initialTeams));
+  const [players,setPlayers] = useState(initialPlayers);
   const [showModal, setShowModal] = useState(false);
   const [teamID, setTeamID] = useState('');
 
-  useEffect(() => {
-          async function loadTeams() {
-              const data = await getTeamsFromFirestore(division);
-              console.log("Firestore teams:", data);
-              setTeams(sortTeamsByWinsThenDiff(data));
-          }
+//   useEffect(() => {
+//           async function loadTeams() {
+//               const data = await getTeamsFromFirestore(division);
+//               console.log("Firestore teams:", data);
+//               setTeams(sortTeamsByWinsThenDiff(data));
+//           }
         
-          async function loadPlayers() {
-              const data = await getPlayersFromFirestore(division);
-              setPlayers(data);
-          }
-          loadTeams();
-          loadPlayers();
-  }, [division]);
+//           async function loadPlayers() {
+//               const data = await getPlayersFromFirestore(division);
+//               setPlayers(data);
+//           }
+//           loadTeams();
+//           loadPlayers();
+//   }, [division]);
 
   {/* Get Mock Teams */}
   // const teams = mockStandings.filter((team) => team.division === division);

@@ -5,29 +5,29 @@ import ScheduleTable from './ScheduleTable';
 import { getTeamsFromFirestore } from '@/lib/firebase/teams';
 import { getGamesFromFirestore } from '@/lib/firebase/games';
 
-export default function ScheduleClient({division}) {
+export default function ScheduleClient({division, initialTeams, initialGames}) {
 
     const [selectedWeek, setSelectedWeek] = useState(1);
     const [selectedTeamId, setSelectedTeamId] = useState("All");
-    const [teams, setTeams] = useState([]);
-    const [games, setGames] = useState([]);
+    const [teams, setTeams] = useState(initialTeams);
+    const [games, setGames] = useState(initialGames);
 
-    useEffect(() => {
-              async function loadTeams() {
-                  const data = await getTeamsFromFirestore(division);
-                  console.log("Firestore teams:", data);
-                  setTeams(data);
-              }
+    // useEffect(() => {
+    //           async function loadTeams() {
+    //               const data = await getTeamsFromFirestore(division);
+    //               console.log("Firestore teams:", data);
+    //               setTeams(data);
+    //           }
 
-              async function loadGames() {
-                  const data = await getGamesFromFirestore(division);
-                  console.log("Firestore Games:", data);
-                  setGames(data);
+    //           async function loadGames() {
+    //               const data = await getGamesFromFirestore(division);
+    //               console.log("Firestore Games:", data);
+    //               setGames(data);
 
-              }
-              loadTeams();
-              loadGames();
-      }, [division]);
+    //           }
+    //           loadTeams();
+    //           loadGames();
+    //   }, [division]);
     
 
 

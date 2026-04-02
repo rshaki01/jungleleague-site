@@ -1,9 +1,14 @@
-import ScheduleFilter from "@/components/ui/schedule/ScheduleFilter";
 import ScheduleClient from "@/components/ui/schedule/ScheduleClient";
+import { getTeamsFromFirestore } from "@/lib/firebase/teams";
+import { getGamesFromFirestore } from "@/lib/firebase/games";
 
 
 export default async function SchedulePage({ params }) {
    const { division } = await params;
+
+   const teams = await getTeamsFromFirestore(division);
+   const games = await getGamesFromFirestore(division);
+   
    
   return (
     
@@ -14,7 +19,7 @@ export default async function SchedulePage({ params }) {
           : "Recreational Schedule"}
       </h1>
       <p className="my-3 text-xs sm:text-sm text-gray-300 max-w-3xl mx-auto text-center">Stay updated with every upcoming match. Filter by team or week.</p>
-      <ScheduleClient division={division} />
+      <ScheduleClient division={division} initialTeams={teams} initialGames={games}/>
     </div>
   );
 }
