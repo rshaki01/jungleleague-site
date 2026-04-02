@@ -1,10 +1,14 @@
 import StandingsTable from "@/components/ui/StandingsTable";
 import StatisticsClient from "@/components/ui/statistics/StatisticsClient";
+import { getPlayersFromFirestore } from '@/lib/firebase/players';
+import { getTeamsFromFirestore } from '@/lib/firebase/teams';
 
 
 export default async function StatisticsPage({ params }) {
    const { division } = await params;
    
+   const players = await getPlayersFromFirestore(division);
+   const teams = await getTeamsFromFirestore(division);
            
   return (
     
@@ -14,8 +18,8 @@ export default async function StatisticsPage({ params }) {
           ? "Competitive Stats"
           : "Recreational Stats"}
       </h1>
-      <p className="my-3 text-xs sm:text-sm text-gray-300 max-w-3xl mx-auto text-center">View the current leaders and player statistics. For player information, click on any player.</p>
-      <StatisticsClient division={division}/>
+      <p className="my-3 text-xs sm:text-sm text-gray-300 max-w-3xl mx-auto text-center">View the current leaders and player statistics. For player information, search and click on any player.</p>
+      <StatisticsClient division={division} initialPlayers={players} initialTeams={teams}/>
       
     </div>
   );

@@ -1,18 +1,17 @@
 "use client"
 
-import { getPlayersSortedByPoints } from "@/lib/data/helpers"
+import { getPlayersSortedByPoints, getTeamById } from "@/lib/data/helpers"
 
 export default function StatisticsTable({players, teams}) {
 
   const sortedPlayers = getPlayersSortedByPoints(players).slice(0,10);
   const topNinePlayers = sortedPlayers.slice(1,10);
 
-
   return (
     <div className="w-full m-auto mt-5  p-3 rounded-xl overflow-hidden bg-gradient-to-br from-gray-800/50 to-gray-900/30 border border-yellow-400/20">
       
       {/* Header that includes leader*/}
-      <div className="font-semibold gap-4 font-semibold overflow-hidden">
+      <div className="font-semibold  overflow-hidden">
         <div className="border-b border-gray-300 py-1 text-sm sm:text-base">POINTS PER GAME</div>
         <div className="pt-2 text-sm flex justify-between">
           <span>
@@ -22,6 +21,7 @@ export default function StatisticsTable({players, teams}) {
             {sortedPlayers.length > 1 ? sortedPlayers[0].ppg : '' }
           </span>
         </div>
+        <span className="text-[9px] text-yellow-500/60">{sortedPlayers.length > 1 ?  getTeamById(sortedPlayers[0].teamId, teams).name : ''}</span>
       </div>
 
       {/* Rows */}

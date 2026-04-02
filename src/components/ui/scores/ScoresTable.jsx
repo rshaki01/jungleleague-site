@@ -3,13 +3,13 @@
 import { useState,  } from "react";
 import { getTeamById, getGames, getPlayerByPlayerId } from "@/lib/data/helpers";
 
-export default function ScoresTable({division, week, teamId, teams, games}) {
+export default function ScoresTable({division, week, teamId, teams, games, players}) {
 
   const [openGameId, setOpenGameId] = useState(null);
-  
-  const filteredGames = getGames(division,week,teamId, games);
 
-  console.log(filteredGames);
+  
+  const filteredGames = getGames(division,week,teamId,games);
+
   return (
     <div className="w-full m-auto mt-5">
         
@@ -42,7 +42,7 @@ export default function ScoresTable({division, week, teamId, teams, games}) {
             {openGameId === game.id && (
             <div className="mt-3 border-t border-gray-700 pt-4 p-5 bg-blue-400/10 border rounded-lg">
               <div className="text-xl text-gray-300 mb-2 font-bold">
-                {getTeamById(game.homeTeamId).name}
+                {getTeamById(game.homeTeamId, teams).name}
               </div>
 
               {/* Home Team Box Score */}
@@ -51,7 +51,7 @@ export default function ScoresTable({division, week, teamId, teams, games}) {
                   key={player.playerId}
                   className="grid grid-cols-4 gap-2 text-sm text-gray-200 py-1"
                 >
-                  <span>{getPlayerByPlayerId(player.playerId).name}</span>
+                  <span>{getPlayerByPlayerId(player.playerId, players).name}</span>
                   <span>PTS: {player.points}</span>
                   <span>REB: {player.rebounds}</span>
                   <span>AST: {player.assists}</span>
@@ -59,7 +59,7 @@ export default function ScoresTable({division, week, teamId, teams, games}) {
               ))}
               
               <div className=" text-xl text-gray-300 mt-4 mb-2 font-bold">
-                {getTeamById(game.awayTeamId).name}
+                {getTeamById(game.awayTeamId, teams).name}
               </div>
 
               {/* Home Team Box Score */}
@@ -68,7 +68,7 @@ export default function ScoresTable({division, week, teamId, teams, games}) {
                   key={player.playerId}
                   className="grid grid-cols-4 gap-2 text-sm text-gray-200 py-1"
                 >
-                  <span>{getPlayerByPlayerId(player.playerId).name}</span>
+                  <span>{getPlayerByPlayerId(player.playerId, players).name}</span>
                   <span>PTS: {player.points}</span>
                   <span>REB: {player.rebounds}</span>
                   <span>AST: {player.assists}</span>

@@ -58,8 +58,8 @@ export function getPlayers() {
   return mockPlayerAggregates;
 }
 
-export function getPlayerByPlayerId(playerId) {
-  return mockPlayerAggregates.find((p) => p.id === playerId);
+export function getPlayerByPlayerId(playerId, players) {
+  return players.find((p) => p.id === playerId);
 }
 
 export function getPlayersByDivision(division) {

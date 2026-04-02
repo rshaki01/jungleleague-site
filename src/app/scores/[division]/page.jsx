@@ -1,8 +1,15 @@
 import ScoresClient from "@/components/ui/scores/ScoresClient";
-
+import { getTeamsFromFirestore } from '@/lib/firebase/teams';
+import { getGamesFromFirestore } from '@/lib/firebase/games';
+import { getPlayersFromFirestore } from "@/lib/firebase/players";
 
 export default async function ScoresPage({ params }) {
    const { division } = await params;
+
+  const teams = await getTeamsFromFirestore(division);
+  const games = await getGamesFromFirestore(division);
+  const players = await getPlayersFromFirestore(division)
+
    
   return (
     
@@ -13,7 +20,7 @@ export default async function ScoresPage({ params }) {
           : "Recreational Scores"}
       </h1>
       <p className="my-3 text-xs sm:text-sm text-gray-300 max-w-3xl mx-auto text-center">View results for each game. Filter by team or week.</p>
-      <ScoresClient division={division} />
+      <ScoresClient division={division} initialTeams={teams} initialGames={games} initialPlayers={players}/>
       
     </div>
   );
