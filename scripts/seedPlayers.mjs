@@ -1,7 +1,7 @@
 import admin from "firebase-admin";
 import { readFileSync } from "node:fs";
 import { mockPlayerAggregates } from "../src/lib/data/mockPlayerAggregates.js";
-
+import { jlPlayers} from "@/lib/data/jlPlayers.js";
 // load service account json
 const serviceAccount = JSON.parse(
   readFileSync("./secrets/jungle-league-service-account.json", "utf8")

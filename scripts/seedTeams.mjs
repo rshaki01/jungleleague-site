@@ -1,6 +1,7 @@
 import admin from "firebase-admin";
 import { readFileSync } from "node:fs";
 import { mockStandings } from "../src/lib/data/mockStandings.js";
+import { jlTeams } from "../src/lib/data/jlTeams.js";
 
 // load service account json
 const serviceAccount = JSON.parse(
@@ -15,7 +16,7 @@ const db = admin.firestore();
 
 async function seedTeams() {
   try {
-    for (const team of mockStandings) {
+    for (const team of jlTeams) {
       const teamId = team.id;
 
       await db.collection("teams").doc(teamId).set(team);
