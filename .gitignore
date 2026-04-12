@@ -3,6 +3,8 @@
 # secrets
 /secrets
 
+#data
+/lib/data/jlTeams.js
 
 # dependencies
 /node_modules
