@@ -4,7 +4,7 @@
 /secrets
 
 #data
-/lib/data/jlTeams.js
+src/lib/data/
 
 # dependencies
 /node_modules
