@@ -21,7 +21,7 @@ export default function Navbar() {
                     width={64}
                     height={64}
                     alt ="Jungle League Logo"
-                    className="rounded-full duration-300 ease-out hover:scale-110  "
+                    className="rounded-full duration-300 ease-out hover:scale-110"
                 />
             </Link>
             
@@ -30,46 +30,51 @@ export default function Navbar() {
                 {/* Home Link Item */}
 
                 {/* Standings Link Item */}
-                <NavDropdown
-                    label="Standings"
-                    items={[
-                        {text: "Competitive", href: "/standings/competitive"},
-                        {text: "Recreational", href: "/standings/recreational"}
+                <Link href="/standings/recreational" className='duration-300 ease-out hover:text-yellow-500'>
+                    <NavDropdown
+                        label="Standings"
+                        items={[
+                            {text: "Competitive", href: "/standings/competitive"},
+                            {text: "Recreational", href: "/standings/recreational"}
 
-                    ]}
-                />
+                        ]}
+                    />
+                </Link>
                 
                 {/* Schedule Link Item */}
-                <NavDropdown
-                    label="Schedule"
-                    items={[
-                        {text: "Competitive", href: "/schedule/competitive"},
-                        {text: "Recreational", href: "/schedule/recreational"}
+                <Link href="/schedule/recreational" className='duration-300 ease-out hover:text-yellow-500'>
+                    <NavDropdown
+                        label="Schedule"
+                        items={[
+                            {text: "Competitive", href: "/standings/competitive"},
+                            {text: "Recreational", href: "/standings/recreational"}
 
-                    ]}
-                />
+                        ]}
+                    />
+                </Link>
 
                 {/* Scores Link Item */}
-                <NavDropdown
-                    label="Scores"
-                    items={[
-                        {text: "Competitive", href: "/scores/competitive"},
-                        {text: "Recreational", href: "/scores/recreational"}
+                <Link href="/scores/recreational" className='duration-300 ease-out hover:text-yellow-500'>
+                    <NavDropdown
+                        label="Scores"
+                        items={[
+                            {text: "Competitive", href: "/scores/competitive"},
+                            {text: "Recreational", href: "/scores/recreational"}
 
-                    ]}
-                />
-    
+                        ]}
+                    />
+                </Link>
                 {/* Statistics Link Item */}
-                <NavDropdown
-                    label="Statistics"
-                    items={[
-                        {text: "Competitive", href: "/statistics/competitive"},
-                        {text: "Recreational", href: "/statistics/recreational"}
+                <Link href="/statistics/recreational" className='duration-300 ease-out hover:text-yellow-500'>
+                    <NavDropdown
+                        label="Statistics"
+                        items={[
+                            {text: "Competitive", href: "/statistics/competitive"},
+                            {text: "Recreational", href: "/statistics/recreational"}
 
-                    ]}
-                />
-
-
+                        ]}
+                    />
+                </Link>
             </ul>
 
             {/* Mobile toggle (default is hidden until viewport is < md) */}

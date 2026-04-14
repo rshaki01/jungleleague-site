@@ -26,7 +26,7 @@ export default function Home() {
         </section>
 
         {/*Experience Section */}
-        <section className="grid grid-cols-1 gap-10 px-5 md:grid-cols-2 mb-20">
+        <section className="grid grid-cols-1 gap-10 px-5 md:grid-cols-1 mb-20">
           
           {/*Key Date Card */}
           <div className="h-[520px] w-full bg-gradient-to-br from-yellow-600/90 to-yellow-200/90 backdrop-blur-xl rounded-2xl py-10 px-10  flex flex-col items-center justify-between hover:from-yellow-300 hover:to-yellow-500 transition-all duration-300 transform">
