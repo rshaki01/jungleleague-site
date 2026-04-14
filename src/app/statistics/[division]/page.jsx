@@ -9,6 +9,7 @@ export default async function StatisticsPage({ params }) {
    
    const players = await getPlayersFromFirestore(division);
    const teams = await getTeamsFromFirestore(division);
+
            
   return (
     

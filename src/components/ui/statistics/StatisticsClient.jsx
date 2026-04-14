@@ -19,6 +19,7 @@ export default function StatisticsClient({division, initialPlayers, initialTeams
     const [isModalOpen, setModal] = useState(false);
     const firestoreFilteredResults = searchPlayersInArray(players, searchTerm);
 
+
     const handleSelectPlayer = (player) => {
     setSelectedPlayer(player);     // pass full player object
     setModal(true);            // open modal
