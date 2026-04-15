@@ -4,9 +4,8 @@ import { getTeamsByDivision } from '@/lib/data/helpers';
 
 export default function ScoresFilter({division, week, team, setWeek, setTeam, teams}) {
 
-    // const teams = getTeamsByDivision(division);
     // Calculate weeks to display based on division selected
-    const weeksInSeason = division === "recreational" ? 8 : 10;
+    const weeksInSeason = division === "recreational" ? 7 : 10;
 
     return (
         <div className="mt-5 m-auto w-full bg-gradient-to-b from-yellow-300/80 to-yellow-500/80 rounded-xl p-5" >
