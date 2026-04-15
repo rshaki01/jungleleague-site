@@ -1,6 +1,6 @@
 import admin from "firebase-admin";
 import { readFileSync } from "node:fs";
-import { mockPlayerAggregates } from "../src/lib/data/mockPlayerAggregates.js";
+import { mockPlayerAggregates } from "../src/lib/data/mockData/mockPlayerAggregates.js";
 import { jlPlayers} from "../src/lib/data/jlPlayers.js";
 // load service account json
 const serviceAccount = JSON.parse(

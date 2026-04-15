@@ -1,7 +1,7 @@
 // src/lib/data/helpers.js
-import { mockStandings } from "./mockStandings";
-import { mockPlayerAggregates } from "./mockPlayerAggregates";
-import { mockGames } from "./mockGames";
+import { mockStandings } from "./mockData/mockStandings";
+import { mockPlayerAggregates } from "./mockData/mockPlayerAggregates";
+import { mockGames } from "./mockData/mockGames";
 
 {/* --- Firestore Helpers --- */}
 

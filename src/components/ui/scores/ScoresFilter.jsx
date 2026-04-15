@@ -1,5 +1,5 @@
 "use client"
-import { mockStandings } from '@/lib/data/mockStandings';
+import { mockStandings } from '@/lib/data/mockData/mockStandings';
 import { getTeamsByDivision } from '@/lib/data/helpers';
 
 export default function ScoresFilter({division, week, team, setWeek, setTeam, teams}) {

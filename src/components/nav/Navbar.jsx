@@ -116,10 +116,17 @@ export default function Navbar() {
 
             <div className="flex flex-col space-y-2 px-4 py-3">
 
-                <span className="font-bold pb-1 border-b border-zinc-100/20">
-                    Standings
-                </span>
-                <div className="flex flex-col space-y-1 text-gray-100">
+                <Link
+                        href="/standings/recreational"
+                        onClick={() => setOpen(false)}
+                        className="font-medium px-2 hover:bg-yellow-200/30 rounded-sm"
+                        >
+                        <span className="font-bold border-zinc-100/20">
+                        Standings
+                        </span>
+                </Link>
+                
+                {/* <div className="flex flex-col space-y-1 text-gray-100">
                     <Link
                         href="/standings/competitive"
                         onClick={() => setOpen(false)}
@@ -134,12 +141,19 @@ export default function Navbar() {
                         >
                         Recreational Standings
                     </Link>
-                </div>
+                </div> */}
 
-                <span className="font-bold pb-1 border-b border-zinc-100/20">
-                    Schedule
-                </span>
-                <div className="flex flex-col space-y-1 text-gray-100">
+                <Link
+                        href="/schedule/recreational"
+                        onClick={() => setOpen(false)}
+                        className="font-medium px-2 hover:bg-yellow-200/30 rounded-sm"
+                        >
+                        <span className="font-bold  border-zinc-100/20">
+                        Schedule
+                        </span>
+                </Link>
+
+                {/* <div className="flex flex-col space-y-1 text-gray-100">
                     <Link
                     href="/schedule/competitive"
                     onClick={() => setOpen(false)}
@@ -154,12 +168,19 @@ export default function Navbar() {
                     >
                     Recreational Schedule
                     </Link>
-                </div>
+                </div> */}
 
-                <span className="font-bold pb-1 border-b border-zinc-100/20 border-zinc-100/20">
+                <Link
+                        href="/scores/recreational"
+                        onClick={() => setOpen(false)}
+                        className="font-medium px-2 hover:bg-yellow-200/30 rounded-sm"
+                        >
+                        <span className="font-bold border-zinc-100/20">
                         Scores
-                </span>
-                <div className="flex flex-col space-y-1 text-gray-100">
+                        </span>
+                </Link>
+
+                {/* <div className="flex flex-col space-y-1 text-gray-100">
                     <Link
                     href="/scores/competitive"
                     onClick={() => setOpen(false)}
@@ -174,12 +195,20 @@ export default function Navbar() {
                     >
                     Recreational Scores
                     </Link>
-                </div>
+                </div> */}
 
-                <span className="font-bold pb-1 border-b border-zinc-100/20">
-                     Statistics
-                </span>
-                <div className="flex flex-col space-y-1 text-gray-100">
+                <Link
+                        href="/statistics/recreational"
+                        onClick={() => setOpen(false)}
+                        className="font-medium px-2 hover:bg-yellow-200/30 rounded-sm"
+                        >
+                        <span className="font-bold  border-zinc-100/20">
+                        Statistics
+                        </span>
+                </Link>
+
+               
+                {/* <div className="flex flex-col space-y-1 text-gray-100">
                     <Link
                     href="/statistics/competitive"
                     onClick={() => setOpen(false)}
@@ -194,7 +223,7 @@ export default function Navbar() {
                     >
                     Recreational Statistics
                     </Link>
-                </div>
+                </div> */}
             </div>
         </div>
         

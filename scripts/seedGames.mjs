@@ -1,6 +1,6 @@
 import admin from "firebase-admin";
 import { readFileSync } from "node:fs";
-import { mockGames } from "../src/lib/data/mockGames.js";
+import { jlGames } from "../src/lib/data/jlGames.js";
 
 // load service account json
 const serviceAccount = JSON.parse(
@@ -15,7 +15,7 @@ const db = admin.firestore();
 
 async function seedGames() {
   try {
-    for (const game of mockGames) {
+    for (const game of jlGames) {
       const gameId = game.id;
       const homeTeamId = game.homeTeamId;
       const awayTeamId = game.awayTeamId;
@@ -24,7 +24,7 @@ async function seedGames() {
       console.log(`Seeded ${gameId}:  ${homeTeamId} vs ${awayTeamId}`);
     }
 
-    console.log("Done seeding teams.");
+    console.log("Done seeding games.");
     process.exit(0);
   } catch (error) {
     console.error("Error seeding teams:", error);

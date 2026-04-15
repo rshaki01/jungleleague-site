@@ -1,6 +1,6 @@
 import admin from "firebase-admin";
 import { readFileSync } from "node:fs";
-import { mockStandings } from "../src/lib/data/mockStandings.js";
+import { mockStandings } from "../src/lib/data/mockData/mockStandings.js";
 import { jlTeams } from "../src/lib/data/jlTeams.js";
 
 // load service account json

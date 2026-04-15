@@ -27,11 +27,11 @@ export default function ScoresTable({division, week, teamId, teams, games, playe
             
             <div className="flex flex-col gap-3 mx-auto w-5/6 justify-between text-base">
               <div className="pb-2 flex justify-between">
-                <span>{getTeamById(game.homeTeamId, teams).name}</span>
+                {/* <span>{getTeamById(game.homeTeamId, teams).name}</span> */}
                 <span>{game.homeScore}</span>
               </div>
               <div className="flex justify-between">
-                <span>{getTeamById(game.awayTeamId, teams).name}</span>
+                {/* <span>{getTeamById(game.awayTeamId, teams).name}</span> */}
                 <span>{game.awayScore}</span>
               </div>
             </div>
