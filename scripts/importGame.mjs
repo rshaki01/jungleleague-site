@@ -76,6 +76,42 @@ function validateCompletedGame(gameData) {
 
     // 5. Validate the box score shape
 
+    // 5. Validate the box score shape
+    if (
+    !gameData.boxScore ||
+    typeof gameData.boxScore !== "object" ||
+    Array.isArray(gameData.boxScore)
+    ) {
+    errors.push("boxScore must be a valid object");
+    } else {
+    const homeBoxScore = gameData.boxScore[gameData.homeTeamId];
+    const awayBoxScore = gameData.boxScore[gameData.awayTeamId];
+
+    if (!(gameData.homeTeamId in gameData.boxScore)) {
+        errors.push(`Missing boxScore for home team: ${gameData.homeTeamId}`);
+    }
+
+    if (!(gameData.awayTeamId in gameData.boxScore)) {
+        errors.push(`Missing boxScore for away team: ${gameData.awayTeamId}`);
+    }
+
+    if (gameData.homeTeamId in gameData.boxScore && !Array.isArray(homeBoxScore)) {
+        errors.push(`boxScore for home team ${gameData.homeTeamId} must be an array`);
+    }
+
+    if (gameData.awayTeamId in gameData.boxScore && !Array.isArray(awayBoxScore)) {
+        errors.push(`boxScore for away team ${gameData.awayTeamId} must be an array`);
+    }
+
+    if (Array.isArray(homeBoxScore) && homeBoxScore.length === 0) {
+        errors.push(`boxScore for home team ${gameData.homeTeamId} cannot be empty`);
+    }
+
+    if (Array.isArray(awayBoxScore) && awayBoxScore.length === 0) {
+        errors.push(`boxScore for away team ${gameData.awayTeamId} cannot be empty`);
+    }
+    }
+
     return {
         isValid: errors.length === 0,
         errors,

@@ -16,7 +16,7 @@ export default async function SchedulePage({ params }) {
       <h1 className="mt-10 flex justify-center text-3xl font-bold bg-gradient-to-br from-yellow-300 to-yellow-500 bg-clip-text text-transparent text-center">
         {division === "competitive"
           ? "Competitive Schedule"
-          : "Recreational Schedule"}
+          : "Schedule"}
       </h1>
       <p className="my-3 text-xs sm:text-sm text-gray-300 max-w-3xl mx-auto text-center">Stay updated with every upcoming match. Filter by team or week.</p>
       <ScheduleClient division={division} initialTeams={teams} initialGames={games}/>
