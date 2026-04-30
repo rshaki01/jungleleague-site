@@ -14,24 +14,6 @@ export default function ScoresClient({division, initialTeams, initialGames, init
     const [games, setGames] = useState(initialGames);
     const [players, setPlayers] =useState(initialPlayers)
 
-    // useEffect(() => {
-    //               async function loadTeams() {
-    //                   const data = await getTeamsFromFirestore(division);
-    //                   console.log("Firestore teams:", data);
-    //                   setTeams(data);
-    //               }
-    
-    //               async function loadGames() {
-    //                   const data = await getGamesFromFirestore(division);
-    //                   console.log("Firestore Games:", data);
-    //                   setGames(data);
-    
-    //               }
-    //               loadTeams();
-    //               loadGames();
-    //       }, [division]);
-
-
     return (
         <div className="">
             <ScoresFilter
