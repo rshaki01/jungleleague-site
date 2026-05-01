@@ -15,6 +15,7 @@ export default function PlayerStatsTable({player}) {
   const tpPct = player.tpa > 0 ? (player.tpm / player.tpa).toFixed(3) : 0
   const ftPct = player.fta > 0 ?(player.ftm / player.fta).toFixed(3) : 0
 
+  console.log(player.pts);
 
   return (
     <div className="mt-5 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">

@@ -253,7 +253,7 @@ async function importGame(gameData) {
 
     // increment each player's stats
 
-    const statFields = ["points", "rebounds", "assists", "steals", "blocks", "twoPM", "twoPA", "ftm", "fta", "tpm", "tpa", "to"];
+    const statFields = ["pts", "reb", "ast", "stl", "blk", "twoPa", "twoPm", "ftm", "fta", "tpm", "tpa", "to"];
 
     for (const teamId of [gameData.homeTeamId, gameData.awayTeamId]) {
         for (const player of gameData.boxScore[teamId]) {
