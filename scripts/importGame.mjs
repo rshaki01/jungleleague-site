@@ -1,12 +1,12 @@
 import { readFileSync } from "node:fs";
+import { initializeApp, cert } from "firebase-admin/app";
+import { getFirestore, FieldValue } from "firebase-admin/firestore";
 
 const filePath = process.argv[2];
 // read game JSON data
 const gameData = JSON.parse(readFileSync(filePath, 'utf-8'));
 
-// console.log(JSON.stringify(gameData,null, 2));
-
-// check if the game Object is what we expect
+// Validating Game Object and all top level and low level fields are expected
 function validateCompletedGame(gameData) {
     const errors = [];
 
@@ -228,7 +228,6 @@ function validateCompletedGame(gameData) {
 
 }
 
-
 // run validation
 const result = validateCompletedGame(gameData);
 
@@ -239,3 +238,39 @@ if (!result.isValid) {
 }
 
 console.log("Game validation passed.");
+
+// importing game
+
+initializeApp({ credential: cert("./secrets/jungle-league-service-account.json") });
+const db = getFirestore();
+
+async function importGame(gameData) {
+
+    const batch = db.batch();
+
+    const gameRef = db.collection("games").doc(gameData.id);
+    batch.set(gameRef, gameData);
+
+    // increment each player's stats
+
+    const statFields = ["points", "rebounds", "assists", "steals", "blocks", "twoPM", "twoPA", "ftm", "fta", "tpm", "tpa", "to"];
+
+    for (const teamId of [gameData.homeTeamId, gameData.awayTeamId]) {
+        for (const player of gameData.boxScore[teamId]) {
+            const playerRef = db.collection("players").doc(player.playerId);
+            const updates = { gp: FieldValue.increment(1) };
+            for (const field of statFields) {
+                updates[field] = FieldValue.increment(player[field]);
+            }
+            batch.update(playerRef, updates);
+        }
+    }
+
+    await batch.commit();
+    console.log(`Game ${gameData.id} imported successfully.`);
+}
+
+importGame(gameData).catch((err) => {
+    console.error("Import failed:", err);
+    process.exit(1);
+});
