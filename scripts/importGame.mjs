@@ -118,7 +118,8 @@ function validateCompletedGame(gameData) {
 
         if (Array.isArray(homeBoxScore)) {
             const homePlayerPointsTotal = homeBoxScore.reduce((total, player) => {
-                return total + player.points;
+                if (player.absence === true) return total;
+                return total + player.pts;
             }, 0);
 
             if (homePlayerPointsTotal !== gameData.homeScore) {
@@ -130,7 +131,8 @@ function validateCompletedGame(gameData) {
 
         if (Array.isArray(awayBoxScore)) {
             const awayPlayerPointsTotal = awayBoxScore.reduce((total, player) => {
-                return total + player.points;
+                if (player.absence === true) return total;
+                return total + player.pts;
             }, 0);
 
             if (awayPlayerPointsTotal !== gameData.awayScore) {
@@ -143,13 +145,13 @@ function validateCompletedGame(gameData) {
         // 7. Validate each player row
         const requiredPlayerFields = [
             "playerId",
-            "points",
-            "rebounds",
-            "assists",
-            "steals",
-            "blocks",
-            "twoPM",
-            "twoPA",
+            "pts",
+            "reb",
+            "ast",
+            "stl",
+            "blk",
+            "twoPm",
+            "twoPa",
             "ftm",
             "fta",
             "tpm",
@@ -165,16 +167,24 @@ function validateCompletedGame(gameData) {
                 return;
             }
 
+            // make sure playerId is a string
+            if (typeof player.playerId !== "string") {
+                errors.push(`playerId must be a string for ${teamId} player at index ${index}`);
+            }
+
+            // validate absence field if present
+            if ("absence" in player && typeof player.absence !== "boolean") {
+                errors.push(`absence must be a boolean for ${teamId} player at index ${index}`);
+            }
+
+            // skip stat validation for absent players
+            if (player.absence === true) return;
+
             // make sure all required player fields exist
             for (const field of requiredPlayerFields) {
                 if (!(field in player)) {
                     errors.push(`Missing ${field} for ${teamId} player at index ${index}`);
                 }
-            }
-
-            // make sure playerId is a string
-            if (typeof player.playerId !== "string") {
-                errors.push(`playerId must be a string for ${teamId} player at index ${index}`);
             }
 
             // make sure stat fields are numbers
@@ -195,16 +205,16 @@ function validateCompletedGame(gameData) {
                 typeof player.twoPM === "number" &&
                 typeof player.tpm === "number" &&
                 typeof player.ftm === "number" &&
-                typeof player.points === "number"
+                typeof player.pts === "number"
             ) {
                 const calculatedPoints =
                     player.twoPM * 2 +
                     player.tpm * 3 +
                     player.ftm;
 
-                if (calculatedPoints !== player.points) {
+                if (calculatedPoints !== player.pts) {
                     errors.push(
-                        `Points mismatch for ${player.playerId}. Expected ${player.points}, calculated ${calculatedPoints}`
+                        `Points mismatch for ${player.playerId}. Expected ${player.pts}, calculated ${calculatedPoints}`
                     );
                 }
             }
@@ -257,6 +267,8 @@ async function importGame(gameData) {
 
     for (const teamId of [gameData.homeTeamId, gameData.awayTeamId]) {
         for (const player of gameData.boxScore[teamId]) {
+            if (player.substitute === true) continue;
+            if (player.absence === true) continue;
             const playerRef = db.collection("players").doc(player.playerId);
             const updates = { gp: FieldValue.increment(1) };
             for (const field of statFields) {
@@ -265,6 +277,13 @@ async function importGame(gameData) {
             batch.update(playerRef, updates);
         }
     }
+
+    // update team standings
+    const winnerId = gameData.homeScore > gameData.awayScore ? gameData.homeTeamId : gameData.awayTeamId;
+    const loserId = gameData.homeScore > gameData.awayScore ? gameData.awayTeamId : gameData.homeTeamId;
+
+    batch.update(db.collection("teams").doc(winnerId), { wins: FieldValue.increment(1) });
+    batch.update(db.collection("teams").doc(loserId), { losses: FieldValue.increment(1) });
 
     await batch.commit();
     console.log(`Game ${gameData.id} imported successfully.`);
