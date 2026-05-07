@@ -45,16 +45,29 @@ export default function ScoresTable({division, week, teamId, teams, games, playe
                 {getTeamById(game.homeTeamId, teams).name}
               </div>
 
+              <div className="grid grid-cols-8 gap-2 text-sm text-gray-200 py-1">
+                <span className="col-span-2">Player</span>
+                <span>PTS</span>
+                <span>REB</span>
+                <span>AST</span>
+                <span>STL</span>
+                <span>BLK</span>
+                <span>TO</span>
+              </div>
+
               {/* Home Team Box Score */}
               {game.boxScore[game.homeTeamId].map((player) => (
                 <div
                   key={player.playerId}
-                  className="grid grid-cols-5 gap-2 text-sm text-gray-200 py-1"
+                  className="grid grid-cols-8 gap-2 text-sm text-gray-200 py-1"
                 >
                   <span className="col-span-2">{getPlayerByPlayerId(player.playerId, players).name}{player.substitute && <span className="ml-1 text-yellow-400/70 text-xs">(Sub)</span>}</span>
-                  <span>PTS: {player.pts}</span>
-                  <span>REB: {player.reb}</span>
-                  <span>AST: {player.ast}</span>
+                  <span>{player.pts}</span>
+                  <span>{player.reb}</span>
+                  <span>{player.ast}</span>
+                  <span>{player.stl}</span>
+                  <span>{player.blk}</span>
+                  <span>{player.to}</span>
                 </div>
               ))}
               
@@ -62,16 +75,29 @@ export default function ScoresTable({division, week, teamId, teams, games, playe
                 {getTeamById(game.awayTeamId, teams).name}
               </div>
 
+              <div className="grid grid-cols-8 gap-2 text-sm text-gray-200 py-1">
+                <span className="col-span-2">Player</span>
+                <span>PTS</span>
+                <span>REB</span>
+                <span>AST</span>
+                <span>STL</span>
+                <span>BLK</span>
+                <span>TO</span>
+              </div>
+
               {/* Home Team Box Score */}
               {game.boxScore[game.awayTeamId].map((player) => (
                 <div
                   key={player.playerId}
-                  className="grid grid-cols-4 gap-2 text-sm text-gray-200 py-1"
+                  className="grid grid-cols-8 gap-2 text-sm text-gray-200 py-1"
                 >
-                  <span>{getPlayerByPlayerId(player.playerId, players).name}{player.substitute && <span className="ml-1 text-yellow-400/70 text-xs">(Sub)</span>}</span>
-                  <span>PTS: {player.pts}</span>
-                  <span>REB: {player.reb}</span>
-                  <span>AST: {player.ast}</span>
+                  <span className="col-span-2">{getPlayerByPlayerId(player.playerId, players).name}{player.substitute && <span className="ml-1 text-yellow-400/70 text-xs">(Sub)</span>}</span>
+                  <span>{player.pts}</span>
+                  <span>{player.reb}</span>
+                  <span>{player.ast}</span>
+                  <span>{player.stl}</span>
+                  <span>{player.blk}</span>
+                  <span>{player.to}</span>
                 </div>
               ))}
             </div>
