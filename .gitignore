@@ -4,7 +4,6 @@
 /secrets
 
 #data
-src/lib/data/
 
 # dependencies
 /node_modules
