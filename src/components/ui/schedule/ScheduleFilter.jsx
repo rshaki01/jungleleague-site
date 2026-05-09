@@ -26,9 +26,7 @@ export default function ScheduleFilter({division, week, teamId, setWeek, setTeam
                     Week {i + 1}
                   </option>
                 ))}
-                <option key={i + 1} value={i + 1}>
-                    Week {i + 1}
-                </option>
+                
                 
               </select>
           </div>
