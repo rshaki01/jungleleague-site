@@ -54,32 +54,32 @@ export function getTeamById(teamId, teams) {
 }
 
 // --- Players ---
-export function getPlayers() {
-  return mockPlayerAggregates;
-}
+// export function getPlayers() {
+//   return mockPlayerAggregates;
+// }
 
 export function getPlayerByPlayerId(playerId, players) {
   return players.find((p) => p.id === playerId);
 }
 
-export function getPlayersByDivision(division) {
-  return mockPlayerAggregates.filter((p) => p.division === division);
-}
+// export function getPlayersByDivision(division) {
+//   return mockPlayerAggregates.filter((p) => p.division === division);
+// }
 
 export function getPlayersByTeamId(teamId, players) {
   return players.filter((p) => p.teamId === teamId);
 }
 
-export function searchPlayers(division, searchTerm) {
+// export function searchPlayers(division, searchTerm) {
 
-  const cleanSearchTerm = searchTerm.toLowerCase().trim();
+//   const cleanSearchTerm = searchTerm.toLowerCase().trim();
 
-  if (cleanSearchTerm === "") {
-    return [];
-  }
+//   if (cleanSearchTerm === "") {
+//     return [];
+//   }
 
-  return mockPlayerAggregates.filter((p) => p.division === division && p.name.toLowerCase().includes(cleanSearchTerm)).slice(0,5)
-}
+//   return mockPlayerAggregates.filter((p) => p.division === division && p.name.toLowerCase().includes(cleanSearchTerm)).slice(0,5)
+// }
 
 
 
