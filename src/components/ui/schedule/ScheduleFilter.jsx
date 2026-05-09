@@ -26,6 +26,16 @@ export default function ScheduleFilter({division, week, teamId, setWeek, setTeam
                     Week {i + 1}
                   </option>
                 ))}
+                <option key={8} value={8}>
+                    Quarter-Finals
+                </option>
+                <option key={9} value={9}>
+                    Semi-Finals
+                </option>
+                <option key={10} value={10}>
+                    Finals
+                </option>
+
                 
                 
               </select>
