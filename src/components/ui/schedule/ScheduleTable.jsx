@@ -13,7 +13,7 @@ export default function ScheduleTable({division, week, teamId, teams, games}) {
         
         {/* Table Head */}
  
-        <p>{division} {week} {teamId} </p>
+        
         {/* Table Body - dynamically display each row*/}
         {scheduledGames.map((game) => (<div key={game.id}  className="flex flex-col gap-3 p-5 mb-5 bg-gradient-to-br from-gray-800/50 to-gray-900/30 rounded-xl border border-yellow-400/20 overflow-hidden text-xs font-semibold hover:bg-gray-700/30 transition-all duration-200">
             <div className="flex gap-3 border-b border-gray-100/30 mx-auto">
