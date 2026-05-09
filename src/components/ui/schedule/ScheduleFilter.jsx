@@ -5,7 +5,7 @@ import { getTeamsByDivision } from '@/lib/data/helpers';
 export default function ScheduleFilter({division, week, teamId, setWeek, setTeam, teams}) {
 
     // Calculate weeks to display based on division selected
-    const weeksInSeason = division === "recreational" ? 8 : 10;
+    const weeksInSeason = division === "recreational" ? 7 : 10;
 
 
     return (
@@ -26,6 +26,10 @@ export default function ScheduleFilter({division, week, teamId, setWeek, setTeam
                     Week {i + 1}
                   </option>
                 ))}
+                <option key={i + 1} value={i + 1}>
+                    Week {i + 1}
+                </option>
+                
               </select>
           </div>
           <div className="mt-3 flex flex-col gap-2">
