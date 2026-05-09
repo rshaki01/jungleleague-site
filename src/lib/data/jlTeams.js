@@ -6,7 +6,7 @@
    { 
     id: "rea",
     division: "recreational",
-    name: "Regal Eagles", 
+    name: "REA", 
     wins: 0, 
     losses: 0, 
     pct: ".000", 
