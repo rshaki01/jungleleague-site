@@ -11,9 +11,9 @@ export default function PlayerStatsTable({player}) {
   const bpg = player.gp > 0 ? (player.blk / player.gp).toFixed(1) : 0
   const fgm = (player.twoPm + player.tpm)
   const fga = (player.twoPa + player.tpa)
-  const fgPct = fga > 0 ? (fgm / fga).toFixed(3) : 0
-  const tpPct = player.tpa > 0 ? (player.tpm / player.tpa).toFixed(3) : 0
-  const ftPct = player.fta > 0 ?(player.ftm / player.fta).toFixed(3) : 0
+  const fgPct = fga > 0 ? ((fgm / fga)*100).toFixed(1) : 0
+  const tpPct = player.tpa > 0 ? ((player.tpm / player.tpa)*100).toFixed(1) : 0
+  const ftPct = player.fta > 0 ? ((player.ftm / player.fta)*100).toFixed(1) : 0
 
   console.log(player.pts);
 
