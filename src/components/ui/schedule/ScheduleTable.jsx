@@ -23,9 +23,9 @@ export default function ScheduleTable({division, week, teamId, teams, games}) {
             </div>
             
             <div className="flex gap-3 mx-auto text-gray-400/80">
-              <div className="">Week: {game.week}</div>
-              <div className="">Date: {game.date}</div>
-              <div className="">Time: {game.time}</div>
+              <div className="text-yellow-400">Week: {game.week}</div>
+              <div className="text-blue-400">Date: {game.date}</div>
+              <div className="text-red-400">Time: {game.time}</div>
             </div>
             
         </div>)
