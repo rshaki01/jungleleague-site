@@ -104,6 +104,6 @@ export const jlPlayers = [
 //   { id: "borough-boys-p6", teamId: "borough-boys", division: "recreational", number: 12, name: "Samantar Isse", gp: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, twoPm: 0, twoPa: 0, ftm: 0, fta: 0, tpm: 0, tpa: 0, to: 0},
 //   { id: "borough-boys-p7", teamId: "borough-boys", division: "recreational", number: 7, name: "Jonathan", gp: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, twoPm: 0, twoPa: 0, ftm: 0, fta: 0, tpm: 0, tpa: 0, to: 0},
 //   { id: "borough-boys-p8", teamId: "borough-boys", division: "recreational", number: 72, name: "Tobias Bogle-Sanders", gp: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, twoPm: 0, twoPa: 0, ftm: 0, fta: 0, tpm: 0, tpa: 0, to: 0},
-  { id: "borough-boys-p9", teamId: "borough-boys", division: "recreational", number: 77, name: "King", gp: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, twoPm: 0, twoPa: 0, ftm: 0, fta: 0, tpm: 0, tpa: 0, to: 0},
+// { id: "borough-boys-p9", teamId: "borough-boys", division: "recreational", number: 77, name: "King", gp: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, twoPm: 0, twoPa: 0, ftm: 0, fta: 0, tpm: 0, tpa: 0, to: 0},
 
 ];
