@@ -24,7 +24,7 @@ export default function TeamTable({players}) {
 
                 return (
                 <div key={player.id} className="hidden sm:grid grid-cols-6 gap-4 p-3 text-xs md:text-sm font-semibold text-gray-300 border-b border-gray-500/30">
-                    <div className="col-span-2">{player.name}</div>
+                    <div className="col-span-2">#{player.number} - {player.name}</div>
                     <div className="col-span-1 text-center">{ppg}</div>
                     <div className="col-span-1 text-center">{rpg}</div>
                     <div className="col-span-1 text-center">{apg}</div>        
