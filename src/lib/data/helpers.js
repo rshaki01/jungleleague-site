@@ -87,6 +87,17 @@ export function sortPlayersByPPG(players) {
   return [...players].sort((a, b) => (b.ppg ?? 0) - (a.ppg ?? 0));
 }
 
+export function getTopPlayersByStat(players, rawField, limit = 10) {
+  return [...players]
+    .filter(p => p.gp > 0)
+    .sort((a, b) => {
+      const aAvg = (a[rawField] ?? 0) / a.gp;
+      const bAvg = (b[rawField] ?? 0) / b.gp;
+      return bAvg - aAvg;
+    })
+    .slice(0, limit);
+}
+
 // --- Games ---
 
 export function getGames(division, week, teamId, games) {
