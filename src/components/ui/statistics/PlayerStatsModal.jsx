@@ -10,7 +10,10 @@ export default function PlayerStatsModal({player, setModal, teams}) {
             <div className="max-w-5xl w-full max-h-[90vh] overflow-y-auto bg-gradient-to-br from-zinc-900 to-black  m-8 p-8 rounded-xl border border-gray-500/50" onClick={(e) => e.stopPropagation()}>
                 <div className="flex justify-between py-2 w-full bg-gradient-to-br from-yellow-300/80 to-yellow-600/80 border border-yellow-400/20 text-white font-bold  px-4 rounded">
                     <div className='flex flex-col'>
-                        <h1 className="text-slate-50 text-xl font-bold text-shadow-lg">{player.name}</h1>
+                        <div>
+                            <span className="text-xl text-shadow-lg">#{player.number}</span>
+                            <span className="text-slate-50 text-xl font-bold text-shadow-lg"> - {player.name}</span>
+                        </div>
                         <span className='text-sm items-align'>({getTeamById(player.teamId, teams).name})</span>
                     </div>
                            

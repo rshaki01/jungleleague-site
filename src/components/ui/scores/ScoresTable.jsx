@@ -70,7 +70,7 @@ export default function ScoresTable({division, week, teamId, teams, games, playe
                         key={player.playerId}
                         className={`grid grid-cols-8 gap-2 text-sm px-3 py-2 ${i % 2 === 0 ? "bg-white/5" : "bg-transparent"}`}
                       >
-                        <span className="col-span-2 text-gray-200 truncate">{player.substitute && <span className="mr-1 text-yellow-400/70">★</span>}{getPlayerByPlayerId(player.playerId, players).name}{player.substitute && <span className="ml-1 text-yellow-400/70 text-xs">(Sub)</span>}</span>
+                        <span className="col-span-2 text-gray-200 truncate">{player.substitute && <span className="mr-1 text-yellow-400/70">★</span>}#{getPlayerByPlayerId(player.playerId, players).number} - {getPlayerByPlayerId(player.playerId, players).name}{player.substitute && <span className="ml-1 text-yellow-400/70 text-xs">(Sub)</span>}</span>
                         <span className="text-center text-gray-300">{player.pts}</span>
                         <span className="text-center text-gray-300">{player.reb}</span>
                         <span className="text-center text-gray-300">{player.ast}</span>
@@ -104,7 +104,7 @@ export default function ScoresTable({division, week, teamId, teams, games, playe
                         key={player.playerId}
                         className={`grid grid-cols-8 gap-2 text-sm px-3 py-2 ${i % 2 === 0 ? "bg-white/5" : "bg-transparent"}`}
                       >
-                        <span className="col-span-2 text-gray-200 truncate">{player.substitute && <span className="mr-1 text-yellow-400/70">★</span>}{getPlayerByPlayerId(player.playerId, players).name}{player.substitute && <span className="ml-1 text-yellow-400/70 text-xs">(Sub)</span>}</span>
+                        <span className="col-span-2 text-gray-200 truncate">{player.substitute && <span className="mr-1 text-yellow-400/70">★</span>}#{getPlayerByPlayerId(player.playerId, players).number} - {getPlayerByPlayerId(player.playerId, players).name}{player.substitute && <span className="ml-1 text-yellow-400/70 text-xs">(Sub)</span>}</span>
                         <span className="text-center text-gray-300">{player.pts}</span>
                         <span className="text-center text-gray-300">{player.reb}</span>
                         <span className="text-center text-gray-300">{player.ast}</span>
