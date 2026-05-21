@@ -82,7 +82,7 @@ export default function StatisticsClient({division, initialPlayers, initialTeams
             <StatisticsFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm} resultedPlayers={firestoreFilteredResults} onSelectPlayer={handleSelectPlayer} teams={teams}/>
 
             <h2 className="text-xl font-semibold text-center mt-6 mb-2">Leaders</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 mt-2 mb-5">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mt-2 mb-5">
                 {LEADERBOARDS.map(({ label, rawField }) => (
                     <div key={rawField}>
                         <LeaderboardTable players={players} teams={teams} rawField={rawField} label={label} />
