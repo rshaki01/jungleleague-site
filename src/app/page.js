@@ -18,7 +18,7 @@ export default function Home() {
           <h1 className="text-6xl md:text-7xl lg:text-7xl font-display font-bold  mb-6">
             <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">Season 2: "The Next Chapter"</span>
           </h1>
-          <span className="bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent text-xl font-bold ">Think you got next? Check out our Instagram below!</span>
+          <span className="bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent text-xl font-bold ">Think you got next? Check out our social media below!</span>
 
           <div className="flex gap-4 mt-6">
             {/* Instragram Button button */}

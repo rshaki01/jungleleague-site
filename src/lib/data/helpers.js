@@ -54,33 +54,14 @@ export function getTeamById(teamId, teams) {
 }
 
 // --- Players ---
-// export function getPlayers() {
-//   return mockPlayerAggregates;
-// }
 
 export function getPlayerByPlayerId(playerId, players) {
   return players.find((p) => p.id === playerId);
 }
 
-// export function getPlayersByDivision(division) {
-//   return mockPlayerAggregates.filter((p) => p.division === division);
-// }
-
 export function getPlayersByTeamId(teamId, players) {
   return players.filter((p) => p.teamId === teamId);
 }
-
-// export function searchPlayers(division, searchTerm) {
-
-//   const cleanSearchTerm = searchTerm.toLowerCase().trim();
-
-//   if (cleanSearchTerm === "") {
-//     return [];
-//   }
-
-//   return mockPlayerAggregates.filter((p) => p.division === division && p.name.toLowerCase().includes(cleanSearchTerm)).slice(0,5)
-// }
-
 
 
 export function sortPlayersByPPG(players) {
@@ -93,6 +74,17 @@ export function getTopPlayersByStat(players, rawField, limit = 10) {
     .sort((a, b) => {
       const aAvg = (a[rawField] ?? 0) / a.gp;
       const bAvg = (b[rawField] ?? 0) / b.gp;
+      return bAvg - aAvg;
+    })
+    .slice(0, limit);
+}
+
+export function getTopPlayersByThreePct(players, limit) {
+  return [...players]
+    .filter((p) => p.gp > 0 && p["tpa"] > 0)
+    .sort((a, b) => {
+      const aAvg = (a["tpm"] / a["tpa"]) * 100;
+      const bAvg = (b["tpm"] / b["tpa"]) * 100;
       return bAvg - aAvg;
     })
     .slice(0, limit);
