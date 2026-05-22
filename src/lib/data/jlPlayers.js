@@ -77,8 +77,7 @@ export const jlPlayers = [
 //   { id: "scar-bears-p10", teamId: "scar-bears", division: "recreational", number: 23, name: "Gabriel Esraquin", gp: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, twoPm: 0, twoPa: 0, ftm: 0, fta: 0, tpm: 0, tpa: 0, to: 0},
 //   { id: "scar-bears-p11", teamId: "scar-bears", division: "recreational", number: 8, name: "Mahamat Aboubakar", gp: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, twoPm: 0, twoPa: 0, ftm: 0, fta: 0, tpm: 0, tpa: 0, to: 0},
 //   { id: "scar-bears-p12", teamId: "scar-bears", division: "recreational", number: 11, name: "Oneal Morrison", gp: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, twoPm: 0, twoPa: 0, ftm: 0, fta: 0, tpm: 0, tpa: 0, to: 0},
-//   { id: "scar-bears-p13", teamId: "scar-bears", division: "recreational", number: 26, name: "Sakib Haider", gp: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, twoPm: 0, twoPa: 0, ftm: 0, fta: 0, tpm: 0, tpa: 0, to: 0},
-    //  { id: "scar-bears-p14", teamId: "scar-bears", division: "recreational", number: 2, name: "Johnny Joshua", gp: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, twoPm: 0, twoPa: 0, ftm: 0, fta: 0, tpm: 0, tpa: 0, to: 0},
+//  { id: "scar-bears-p13", teamId: "scar-bears", division: "recreational", number: 2, name: "Johnny Joshua", gp: 0, pts: 0, reb: 0, ast: 0, stl: 0, blk: 0, twoPm: 0, twoPa: 0, ftm: 0, fta: 0, tpm: 0, tpa: 0, to: 0},
 
 // //   // -------------------------
 // //   // anbu-verizon (10)

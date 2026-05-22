@@ -42,15 +42,19 @@ function LeaderboardTable({ players, teams, rawField, label }) {
 
             {/* Ranks 2–10 */}
             <div>
-                {rest.map((p, i) => (
-                    <div key={p.id} className="px-4 py-2 flex items-center gap-3 border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
-                        <span className="text-gray-500 font-semibold text-xs w-5 shrink-0 tabular-nums">{i + 2}</span>
-                        <div className="flex-1 min-w-0">
-                            <div className="text-gray-200 text-xs font-semibold truncate">{p.name}</div>
+                {rest.map((p, i) => {
+                    const team = getTeamById(p.teamId, teams);
+                    return (
+                        <div key={p.id} className="px-4 py-2 flex items-center gap-3 border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
+                            <span className="text-gray-500 font-semibold text-xs w-5 shrink-0 tabular-nums">{i + 2}</span>
+                            <div className="flex-1 min-w-0">
+                                <div className="text-gray-200 text-xs font-semibold truncate">{p.name}</div>
+                                <div className="text-[10px] text-gray-500 truncate">{team ? team.name : ''}</div>
+                            </div>
+                            <span className="text-gray-300 text-xs font-bold tabular-nums">{avg(p)}</span>
                         </div>
-                        <span className="text-gray-300 text-xs font-bold tabular-nums">{avg(p)}</span>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
 
         </div>
@@ -82,21 +86,31 @@ function ThreePctLeaderboard({ players, teams }) {
                         <div className="font-bold text-white text-sm truncate">{leader.name}</div>
                         <div className="text-[10px] text-yellow-400/60 truncate">{leaderTeam ? leaderTeam.name : ''}</div>
                     </div>
-                    <span className="text-yellow-400 font-black text-lg tabular-nums">{threePct(leader)}%</span>
+                    <div className="flex items-center gap-1.5">
+                        <span className="text-yellow-400/60 text-[10px] tabular-nums">({leader.tpm}-{leader.tpa})</span>
+                        <span className="text-yellow-400 font-black text-lg tabular-nums">{threePct(leader)}%</span>
+                    </div>
                 </div>
             )}
 
             {/* Ranks 2–10 */}
             <div>
-                {rest.map((p, i) => (
-                    <div key={p.id} className="px-4 py-2 flex items-center gap-3 border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
-                        <span className="text-gray-500 font-semibold text-xs w-5 shrink-0 tabular-nums">{i + 2}</span>
-                        <div className="flex-1 min-w-0">
-                            <div className="text-gray-200 text-xs font-semibold truncate">{p.name}</div>
+                {rest.map((p, i) => {
+                    const team = getTeamById(p.teamId, teams);
+                    return (
+                        <div key={p.id} className="px-4 py-2 flex items-center gap-3 border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
+                            <span className="text-gray-500 font-semibold text-xs w-5 shrink-0 tabular-nums">{i + 2}</span>
+                            <div className="flex-1 min-w-0">
+                                <div className="text-gray-200 text-xs font-semibold truncate">{p.name}</div>
+                                <div className="text-[10px] text-gray-500 truncate">{team ? team.name : ''}</div>
+                            </div>
+                            <div className="flex items-center gap-1.5">
+                                <span className="text-gray-500 text-[10px] tabular-nums">({p.tpm}-{p.tpa})</span>
+                                <span className="text-gray-300 text-xs font-bold tabular-nums">{threePct(p)}%</span>
+                            </div>
                         </div>
-                        <span className="text-gray-300 text-xs font-bold tabular-nums">{threePct(p)}%</span>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
 
         </div>
