@@ -51,7 +51,7 @@ export default function StandingsTable({division, initialTeams, initialPlayers})
             <div className="col-span-3 ">{`#${index+1} ${team.name}`}</div>
             <div className="col-span-1 text-center text-green-400">{team.wins}</div>
             <div className="col-span-1 text-center text-red-400">{team.losses}</div>
-            <div className="col-span-1 text-center">{team.pct}</div>
+            <div className="col-span-1 text-center">{(team.wins / (team.wins + team.losses)).toFixed(3)}</div>
             <div className="col-span-1 text-center  lg:block">{team.diff}</div>
         </div>)
         )}        
