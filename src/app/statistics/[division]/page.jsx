@@ -1,4 +1,3 @@
-import StandingsTable from "@/components/ui/StandingsTable";
 import StatisticsClient from "@/components/ui/statistics/StatisticsClient";
 import { getPlayersFromFirestore } from '@/lib/firebase/players';
 import { getTeamsFromFirestore } from '@/lib/firebase/teams';

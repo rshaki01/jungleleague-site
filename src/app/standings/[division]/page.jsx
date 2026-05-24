@@ -1,13 +1,14 @@
 import StandingsTable from "@/components/ui/StandingsTable";
 import { getPlayersFromFirestore } from "@/lib/firebase/players";
 import { getTeamsFromFirestore } from "@/lib/firebase/teams";
+import { getGamesFromFirestore } from "@/lib/firebase/games";
 
 export default async function StandingsPage({ params }) {
    const { division } = await params;
 
     const teams = await getTeamsFromFirestore(division);
     const players = await getPlayersFromFirestore(division)
-    
+    const games = await getGamesFromFirestore(division);
    
            
   return (
@@ -20,7 +21,7 @@ export default async function StandingsPage({ params }) {
       </h1>
       <p className="my-3 text-xs sm:text-sm text-gray-300 max-w-3xl mx-auto text-center">View the current leaders and team standings. For player information, select any team.</p>
       {/* standings table here */}
-      <StandingsTable division={division} initialTeams={teams} initialPlayers={players}/>
+      <StandingsTable division={division} initialTeams={teams} initialPlayers={players} games={games}/>
     </div>
   );
 }

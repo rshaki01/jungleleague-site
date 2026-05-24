@@ -25,22 +25,21 @@ export function getPlayersSortedByPoints(players) {
 
 // -- Teams --
 
-export function sortTeamsByWinsThenDiff(teams) {
+export function sortTeamsByWinsThenDiff(teams, games) {
   // expects diff like "+42" / "-3" OR a number; handles both
   return [...teams].sort((a, b) => {
     const winsA = a.wins ?? 0;
     const winsB = b.wins ?? 0;
     if (winsB !== winsA) return winsB - winsA;
 
-    const diffA = typeof a.diff === "string" ? Number(a.diff) : (a.diff ?? 0);
-    const diffB = typeof b.diff === "string" ? Number(b.diff) : (b.diff ?? 0);
+    const diffA = calcTeamDiff(games, a.id);
+    const diffB = calcTeamDiff(games, b.id);
     return diffB - diffA;
   });
 }
 
-{/* --- Mock Data Helpers --- */}
 
-// --- Teams ---
+
 export function getTeams() {
   return mockStandings;
 }
@@ -115,4 +114,22 @@ export function getGames(division, week, teamId, games) {
 
 
 // --- Scores ---
+
+export function calcTeamDiff(games, teamId) {
+  const teamGames = games.filter(
+    (g) => (g.homeTeamId === teamId || g.awayTeamId === teamId) && g.status === "completed"
+  );
+  if (teamGames.length === 0) return 0;
+
+  console.log(teamGames);
+
+  const total = teamGames.reduce((diff, game) => {
+    if (game.homeTeamId === teamId) {
+      return diff + (game.homeScore ?? 0) - (game.awayScore ?? 0);
+    }
+    return diff + (game.awayScore ?? 0) - (game.homeScore ?? 0);
+  }, 0);
+
+  return total / teamGames.length;
+}
 
