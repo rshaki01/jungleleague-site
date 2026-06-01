@@ -129,7 +129,7 @@ function FgPctLeaderboard({ players, teams }) {
 
             {/* Category label */}
             <div className="px-4 py-2 bg-white/5 border-b border-white/10">
-                <span className="text-[11px] font-bold tracking-widest text-yellow-400/80 uppercase">3PT %</span>
+                <span className="text-[11px] font-bold tracking-widest text-yellow-400/80 uppercase">FG %</span>
             </div>
 
             {/* #1 leader */}
