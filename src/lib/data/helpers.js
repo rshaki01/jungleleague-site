@@ -89,6 +89,17 @@ export function getTopPlayersByThreePct(players, limit) {
     .slice(0, limit);
 }
 
+export function getTopPlayersByFgPct(players, limit) {
+  return [...players]
+    .filter((p) => p.gp > 0 && p["tpa"] > 0 && p["twoPa"])
+    .sort((a, b) => {
+      const aAvg = ((a["tpm"] + a["twoPm"]) / (a["tpa"] + a["twoPa"]) * 100);
+      const bAvg = ((b["tpm"] + b["twoPm"]) / (b["tpa"] + b["twoPa"]) * 100);
+      return bAvg - aAvg;
+    })
+    .slice(0, limit);
+}
+
 // --- Games ---
 
 export function getGames(division, week, teamId, games) {

@@ -1,6 +1,6 @@
 "use client"
 import {useEffect, useState} from 'react';
-import { searchPlayersInArray, getTopPlayersByStat, getTeamById, getTopPlayersByThreePct } from '@/lib/data/helpers';
+import { searchPlayersInArray, getTopPlayersByStat, getTeamById, getTopPlayersByThreePct, getTopPlayersByFgPct } from '@/lib/data/helpers';
 import StatisticsFilter from './StatisticsFilter';
 import StatisticsTable from './StatisticsTable';
 import PlayerStatsModal from './PlayerStatsModal';
@@ -117,6 +117,60 @@ function ThreePctLeaderboard({ players, teams }) {
     );
 }
 
+function FgPctLeaderboard({ players, teams }) {
+    const sortedFgPct = getTopPlayersByFgPct(players, 10);
+    const leader = sortedFgPct[0];
+    const rest = sortedFgPct.slice(1);
+    const leaderTeam = leader ? getTeamById(leader.teamId, teams) : null;
+    const fgPct = (p) => ((p["tpm"] + p["twoPm"])/ (p["tpa"] + p["twoPa"]) * 100).toFixed(1);
+
+    return (
+        <div className="w-full rounded-xl overflow-hidden border border-white/10 bg-gray-900/60 backdrop-blur-sm ">
+
+            {/* Category label */}
+            <div className="px-4 py-2 bg-white/5 border-b border-white/10">
+                <span className="text-[11px] font-bold tracking-widest text-yellow-400/80 uppercase">3PT %</span>
+            </div>
+
+            {/* #1 leader */}
+            {leader && (
+                <div className="px-4 py-3 flex items-center gap-3 border-b border-white/10 bg-yellow-400/5">
+                    <span className="text-yellow-400 font-black text-lg w-5 shrink-0">1</span>
+                    <div className="flex-1 min-w-0">
+                        <div className="font-bold text-white text-sm truncate">{leader.name}</div>
+                        <div className="text-[10px] text-yellow-400/60 truncate">{leaderTeam ? leaderTeam.name : ''}</div>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                        <span className="text-yellow-400/60 text-[10px] tabular-nums">({leader.tpm + leader.twoPm}-{leader.tpa + leader.twoPa})</span>
+                        <span className="text-yellow-400 font-black text-lg tabular-nums">{fgPct(leader)}%</span>
+                    </div>
+                </div>
+            )}
+
+            {/* Ranks 2–10 */}
+            <div>
+                {rest.map((p, i) => {
+                    const team = getTeamById(p.teamId, teams);
+                    return (
+                        <div key={p.id} className="px-4 py-2 flex items-center gap-3 border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
+                            <span className="text-gray-500 font-semibold text-xs w-5 shrink-0 tabular-nums">{i + 2}</span>
+                            <div className="flex-1 min-w-0">
+                                <div className="text-gray-200 text-xs font-semibold truncate">{p.name}</div>
+                                <div className="text-[10px] text-gray-500 truncate">{team ? team.name : ''}</div>
+                            </div>
+                            <div className="flex items-center gap-1.5">
+                                <span className="text-gray-500 text-[10px] tabular-nums">({p.tpm + p.twoPm}-{p.tpa + p.twoPa})</span>
+                                <span className="text-gray-300 text-xs font-bold tabular-nums">{fgPct(p)}%</span>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+
+        </div>
+    );
+}
+
 export default function StatisticsClient({division, initialPlayers, initialTeams}) {
 
     const [players, setPlayers] = useState(initialPlayers); // contains all players from respective division
@@ -146,6 +200,7 @@ export default function StatisticsClient({division, initialPlayers, initialTeams
                     </div>
                 ))}
                 <ThreePctLeaderboard players={players} teams={teams}/>
+                <FgPctLeaderboard players={players} teams={teams}/>
             </div>
 
             {isModalOpen && <PlayerStatsModal player={selectedPlayer} setModal={setModal} teams={teams}/>}
