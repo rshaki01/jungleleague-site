@@ -67,7 +67,7 @@ export default function ScoresTable({division, week, teamId, teams, games, playe
                       <span className="text-center">FG</span>
                       <span className="text-center">3PT</span>
                     </div>
-                    {game.boxScore[game.homeTeamId].map((player, i) => (
+                    {game.boxScore[game.homeTeamId].filter(p => !p.absence).map((player, i) => (
                       <div
                         key={player.playerId}
                         className={`grid grid-cols-10 gap-1 text-sm px-3 py-2 ${i % 2 === 0 ? "bg-white/5" : "bg-transparent"}`}
@@ -105,7 +105,7 @@ export default function ScoresTable({division, week, teamId, teams, games, playe
                       <span className="text-center">FG</span>
                       <span className="text-center">3PT</span>
                     </div>
-                    {game.boxScore[game.awayTeamId].map((player, i) => (
+                    {game.boxScore[game.awayTeamId].filter(p => !p.absence).map((player, i) => (
                       <div
                         key={player.playerId}
                         className={`grid grid-cols-10 gap-1 text-sm px-3 py-2 ${i % 2 === 0 ? "bg-white/5" : "bg-transparent"}`}
