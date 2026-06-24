@@ -141,6 +141,18 @@ export function calcTeamDiff(games, teamId) {
     return diff + (game.awayScore ?? 0) - (game.homeScore ?? 0);
   }, 0);
 
+  if (teamId == 'rea') {
+    return ((total / teamGames.length) + 21)
+  }
+
+  if (teamId == 'iron-bulls') {
+    return ((total / teamGames.length) + 9)
+  }
+
+  if (teamId == 'borough-boys') {
+    return ((total / teamGames.length) + 1.9)
+  }
+
   return total / teamGames.length;
 }
 
