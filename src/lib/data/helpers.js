@@ -80,7 +80,7 @@ export function getTopPlayersByStat(players, rawField, limit = 10) {
 
 export function getTopPlayersByThreePct(players, limit) {
   return [...players]
-    .filter((p) => p.gp >= 4 && p["tpa"] > 0)
+    .filter((p) => p.gp >= 4 && p["tpa"] > 10)
     .sort((a, b) => {
       const aAvg = (a["tpm"] / a["tpa"]) * 100;
       const bAvg = (b["tpm"] / b["tpa"]) * 100;
@@ -91,7 +91,7 @@ export function getTopPlayersByThreePct(players, limit) {
 
 export function getTopPlayersByFgPct(players, limit) {
   return [...players]
-    .filter((p) => p.gp >= 4 && p["tpa"] > 0 && p["twoPa"])
+    .filter((p) => p.gp >= 4 && ((p["tpa"]) + p["twoPa"]) > 10)
     .sort((a, b) => {
       const aAvg = ((a["tpm"] + a["twoPm"]) / (a["tpa"] + a["twoPa"]) * 100);
       const bAvg = ((b["tpm"] + b["twoPm"]) / (b["tpa"] + b["twoPa"]) * 100);
